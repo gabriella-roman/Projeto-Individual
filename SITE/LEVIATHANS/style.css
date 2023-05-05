@@ -76,7 +76,7 @@ body {
 
 #tituloSeaTreader {
     position: absolute;
-    margin-top: 20%;
+    margin-top: 16%;
     margin-left: 4%;
     font-size: 2vmax;
     font-weight: 800;
@@ -86,7 +86,7 @@ body {
 
 #textoSeaTreader {
     position: absolute;
-    margin-top: 22%;
+    margin-top: 18%;
     margin-left: 4%;
     font-size: 1vmax;
     font-weight: 400;
@@ -97,13 +97,14 @@ body {
 .containerSeaTraderAzul {
     background-color: #030D23;
     width: 100%;
-    height: 70%;
+    height: 75%;
 }
 
 #seatreaderdata{
     margin-left: 50%;
     margin-top: 1%;
-    height: 60%; 
+    height: 60%;
+    width: 44%;
     border-radius: 2vmax;;
 }
 
@@ -167,8 +168,8 @@ body {
 
 #tituloReefback {
     position: absolute;
-    margin-top: 20%;
-    margin-left: 85%;
+    margin-top: 16%;
+    margin-left: 86%;
     font-size: 2vmax;
     font-weight: 800;
     color: white;
@@ -178,13 +179,13 @@ body {
 #textoReefback {
     display: flex;
     position: absolute;
-    margin-top: 22%;
+    margin-top: 18%;
     margin-left: 61.5%;
     font-size: 1vmax;
     font-weight: 400;
     color: white;
     width: 35%;
-    text-align: left;
+    text-align: right;
 }
 
 .containerReefbackAzul {
@@ -254,14 +255,14 @@ body {
 
 #reaper {
     height: 90%;
-    width: 50%;
+    width: 70%;
     margin-top: -33%;
-    margin-left: 50%;
+    margin-left: 30%;
 }
 
 #tituloReaper {
     position: absolute;
-    margin-top: 20%;
+    margin-top: 16%;
     margin-left: 4%;
     font-size: 2vmax;
     font-weight: 800;
@@ -271,7 +272,7 @@ body {
 
 #textoReaper {
     position: absolute;
-    margin-top: 22%;
+    margin-top: 18%;
     margin-left: 4%;
     font-size: 1vmax;
     font-weight: 400;
@@ -340,7 +341,7 @@ body {
 
 #tituloGhost {
     position: absolute;
-    margin-top: 20%;
+    margin-top: 16%;
     margin-left: 85%;
     font-size: 2vmax;
     font-weight: 800;
@@ -351,7 +352,7 @@ body {
 #textoGhost {
     display: flex;
     position: absolute;
-    margin-top: 22%;
+    margin-top: 18%;
     margin-left: 61.5%;
     font-size: 1vmax;
     font-weight: 400;
@@ -423,15 +424,15 @@ body {
 }
 
 #seadragon {
-    height: 90%;
-    width: 50%;
+    height: 100%;
+    width: 70%;
     margin-top: -33%;
-    margin-left: 50%;
+    margin-left: 26%;
 }
 
 #tituloSeaDragon {
     position: absolute;
-    margin-top: 20%;
+    margin-top: 16%;
     margin-left: 4%;
     font-size: 2vmax;
     font-weight: 800;
@@ -441,7 +442,7 @@ body {
 
 #textoSeaDragon {
     position: absolute;
-    margin-top: 22%;
+    margin-top: 18%;
     margin-left: 4%;
     font-size: 1vmax;
     font-weight: 400;
@@ -512,17 +513,17 @@ body {
 }
 
 #seaemperor {
-    height: 80%;
-    width: 70%;
-    margin-top: 2%;
-    margin-left: -128%;
+    height: 70%;
+    width: 50%;
+    margin-top: 1.5%;
+    margin-left: -100%;
     position: absolute;
     z-index: 2;
 }
 
 #tituloSeaEmperor {
     position: absolute;
-    margin-top: 20%;
+    margin-top: 16%;
     margin-left: 80%;
     font-size: 2vmax;
     font-weight: 800;
@@ -534,7 +535,7 @@ body {
 #textoSeaEmperor {
     display: flex;
     position: absolute;
-    margin-top: 22%;
+    margin-top: 18%;
     margin-left: 61.5%;
     font-size: 1vmax;
     font-weight: 400;
