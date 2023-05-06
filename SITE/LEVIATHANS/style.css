@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
 body {
     margin: 0;
     width: 100%;
@@ -32,25 +37,50 @@ body {
     gap: 10%;
     color: white;
     font-size: 1vmax;
-    margin-left: 10%;
     cursor: pointer;
+    margin-left: 10%;
+    font-weight: 600;
+}
+
+#leviathansNavbar {
+    color: #E48709;
 }
 
 .conteudoBanner{
     display: flex;
-    margin-top: 30%;
-    width: 50%;
+    width: 100%;
+    height: 94%;
+    justify-content: center;
     flex-direction: column;
     color: white;
-    margin-left: 5%;
+    margin-top: 3%;
 }
 
+#teste {
+    color: #86C5DB;
+    margin-left: 5.2%;;
+    font-size: 1vmax;
+    width: 57%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
 #tituloBanner{
-    font-size: 2vmax;
+    font-size: 2.8vmax;
+    font-weight: 700;
+    margin-left: 5%;
+    margin-top: -0.5%;
+    font-family: 'Montserrat', sans-serif;
+    color: #E48709;
 }
 
 #textoBanner{
-    font-size: 1vmax;
+    font-size: 1.1vmax;
+    margin-top: 2%;
+    line-height: 35px;
+    margin-left: 5%;
+    width: 57%;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
 }
 
 /* SEA TREADER */
@@ -61,17 +91,18 @@ body {
 
 #fundoseatrader{
     height: 90%;
-    width: 75%;
+    width: 95%;
     margin-left: 2%;
     margin-top: 2%;
     border-radius: 2vmax;
 }
 
 #seatreader {
-    height: 90%;
+    height: 60%;
     width: 50%;
-    margin-top: -33%;
-    margin-left: 50%;
+    position: absolute;
+    margin-top: 3.5%;
+    margin-left: -48%;
 }
 
 #tituloSeaTreader {
@@ -86,7 +117,7 @@ body {
 
 #textoSeaTreader {
     position: absolute;
-    margin-top: 18%;
+    margin-top: 19%;
     margin-left: 4%;
     font-size: 1vmax;
     font-weight: 400;
@@ -94,54 +125,73 @@ body {
     width: 35%;
 }
 
-.containerSeaTraderAzul {
-    background-color: #030D23;
-    width: 100%;
-    height: 75%;
-}
-
-#seatreaderdata{
-    margin-left: 50%;
-    margin-top: 1%;
-    height: 60%;
-    width: 44%;
-    border-radius: 2vmax;;
-}
-
-#bioma1{
-    width: 20%;
-    margin-left: 50%;
-    border-radius: 2vmax;
-    height: 25%;
-}
-
-#bioma2{
-    width: 20%;
-    border-radius: 2vmax;
-    height: 25%;
-    margin-top: 2%;
-    margin-left: 3.5%;
-}
-
-#tituloDataSeaTreader {
-    margin-top: 1%;
+.dataBankSeaTrader{
+    display: flex;
+    height: 6%;
+    width: 8%;
     position: absolute;
-    margin-left: 4%;
-    font-size: 2vmax;
+    top: 154%;
+    left: 4%;
+    align-items: center;
+    justify-content: center;
+    background-color: #E48709;
+    opacity: 75%;
+    border-radius: 1vmax;
+    cursor: pointer;
+
+}
+
+#dataBankST{
+    display: flex;
+    color: #030D23;
+    font-weight: 800;
+    font-size: 0.8vmax;
+}
+
+#menuSeaTreadera{
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 63%;
+    background-color: #030D23;
+    z-index: 2;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 2vmax;
+    flex-direction: column;
+}
+
+#botaoST{ 
+    height: 5%;
+    width: 8%;
+    background-color: #E48709;
+    border: #E48709;
+    border-radius: 1vmax;
+    font-size: 0.7vmax;
     font-weight: 800;
     color: white;
-
+    margin-top: 2%;
+    margin-left: 2%;
+    cursor: pointer;
 }
 
-#textoDataSeaTreader {
-    position: absolute;
-    margin-top:5%;
-    margin-left: 4%;
-    font-size: 1vmax;
-    font-weight: 400;
+#tituloDataBankST{
+    display: flex;
+    margin-left: 15%;
     color: white;
-    width: 35%;
+    font-weight: 800;
+    font-size: 2vmax;
 }
+
+#textoDataBankST{
+    display: flex;
+    color: white;
+    margin-left: 15%;
+    height: 60%;
+    width: 80%;
+    flex-direction: column;
+}
+
 
 /* REEFBACK */
 .containerReefbackBranco {
@@ -151,8 +201,8 @@ body {
 
 #fundoreefback{
     height: 90%;
-    width: 75%;
-    margin-left: 23%;
+    width: 95%;
+    margin-left: 2%;
     margin-top: 2%;
     border-radius: 2vmax;
 }
@@ -169,7 +219,7 @@ body {
 #tituloReefback {
     position: absolute;
     margin-top: 16%;
-    margin-left: 86%;
+    margin-left: 84%;
     font-size: 2vmax;
     font-weight: 800;
     color: white;
@@ -179,8 +229,8 @@ body {
 #textoReefback {
     display: flex;
     position: absolute;
-    margin-top: 18%;
-    margin-left: 61.5%;
+    margin-top: 19%;
+    margin-left: 60.5%;
     font-size: 1vmax;
     font-weight: 400;
     color: white;
@@ -188,54 +238,72 @@ body {
     text-align: right;
 }
 
-.containerReefbackAzul {
-    background-color: #030D23;
-    width: 100%;
-    height: 100%;
-}
-
-#reefbackdata{
-    margin-left: 50%;
-    margin-top: 1%;
-    height: 45%; 
-
-    border-radius: 2vmax;;
-}
-
-#bioma1Reefback{
-    width: 20%;
-    margin-left: 50%;
-    border-radius: 2vmax;
-    height: 15%;
-    width: 45%;
-}
-
-#bioma2Reefback{
-    width: 20%;
-    border-radius: 2vmax;
-    height: 15%;
-    margin-top: 2%;
-    margin-left: 3.5%;
-}
-
-#tituloDataReefback {
-    margin-top: 1%;
+.dataBankReefback{
+    display: flex;
+    height: 6%;
+    width: 8%;
     position: absolute;
-    margin-left: 4%;
-    font-size: 2vmax;
+    top: 227%;
+    left: 87.6%;
+    align-items: center;
+    justify-content: center;
+    background-color: #E48709;
+    opacity: 75%;
+    border-radius: 1vmax;
+    cursor: pointer;
+
+}
+
+#dataBankRB{
+    display: flex;
+    color: #030D23;
+    font-weight: 800;
+    font-size: 0.8vmax;
+}
+
+#menuReefbacka{
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 72%;
+    background-color: #030d23;
+    z-index: 2;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 2vmax;
+    flex-direction: column;
+    margin-left: 47%;
+}
+
+#botaoRB{ 
+    height: 5%;
+    width: 8%;
+    background-color: #E48709;
+    border: #E48709;
+    border-radius: 1vmax;
+    font-size: 0.7vmax;
     font-weight: 800;
     color: white;
-
+    margin-top: 2%;
+    margin-left: 2%;
+    cursor: pointer;
 }
 
-#textoDataReefback {
-    position: absolute;
-    margin-top:5%;
-    margin-left: 4%;
-    font-size: 1vmax;
-    font-weight: 400;
+#tituloDataBankRB{
+    display: flex;
+    margin-left: 15%;
     color: white;
-    width: 35%;
+    font-weight: 800;
+    font-size: 2vmax;
+}
+
+#textoDataBankRB{
+    display: flex;
+    color: white;
+    margin-left: 15%;
+    height: 60%;
+    width: 80%;
+    flex-direction: column;
 }
 
 /* REAPER */
@@ -247,7 +315,7 @@ body {
 
 #fundoreaper{
     height: 90%;
-    width: 75%;
+    width: 95%;
     margin-left: 2%;
     margin-top: 2%;
     border-radius: 2vmax;
@@ -272,7 +340,7 @@ body {
 
 #textoReaper {
     position: absolute;
-    margin-top: 18%;
+    margin-top: 19%;
     margin-left: 4%;
     font-size: 1vmax;
     font-weight: 400;
@@ -280,39 +348,71 @@ body {
     width: 35%;
 }
 
-.containerReaperAzul {
-    background-color: #030D23;
-    width: 100%;
-    height: 70%;
-}
-
-#reaperdata{
-    margin-left: 50%;
-    margin-top: 1%;
-    height: 60%; 
-    border-radius: 2vmax;;
-}
-
-
-
-#tituloDataReaper {
-    margin-top: 1%;
+.dataBankReaper{
+    display: flex;
+    height: 6%;
+    width: 8%;
     position: absolute;
-    margin-left: 4%;
-    font-size: 2vmax;
+    top: 291%;
+    left: 4%;
+    align-items: center;
+    justify-content: center;
+    background-color: #E48709;
+    opacity: 75%;
+    border-radius: 1vmax;
+    cursor: pointer;
+
+}
+
+#dataBankRP{
+    display: flex;
+    color: #030D23;
+    font-weight: 800;
+    font-size: 0.8vmax;
+}
+
+#menuReapera{
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 63%;
+    background-color: #030d23;
+    z-index: 2;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 2vmax;
+    flex-direction: column;
+}
+
+#botaoRP{ 
+    height: 5%;
+    width: 8%;
+    background-color: #E48709;
+    border: #E48709;
+    border-radius: 1vmax;
+    font-size: 0.7vmax;
     font-weight: 800;
     color: white;
-
+    margin-top: 2%;
+    margin-left: 2%;
+    cursor: pointer;
 }
 
-#textoDataReaper {
-    position: absolute;
-    margin-top:5%;
-    margin-left: 4%;
-    font-size: 1vmax;
-    font-weight: 400;
+#tituloDataBankRP{
+    display: flex;
+    margin-left: 15%;
     color: white;
-    width: 35%;
+    font-weight: 800;
+    font-size: 2vmax;
+}
+
+#textoDataBankRP{
+    display: flex;
+    color: white;
+    margin-left: 15%;
+    height: 60%;
+    width: 80%;
+    flex-direction: column;
 }
 
 /* GHOST */
@@ -323,8 +423,8 @@ body {
 
 #fundoghost{
     height: 90%;
-    width: 75%;
-    margin-left: 23%;
+    width: 95%;
+    margin-left: 2%;
     margin-top: 2%;
     border-radius: 2vmax;
 }
@@ -342,7 +442,7 @@ body {
 #tituloGhost {
     position: absolute;
     margin-top: 16%;
-    margin-left: 85%;
+    margin-left: 88%;
     font-size: 2vmax;
     font-weight: 800;
     color: white;
@@ -352,61 +452,81 @@ body {
 #textoGhost {
     display: flex;
     position: absolute;
-    margin-top: 18%;
-    margin-left: 61.5%;
+    margin-top: 19%;
+    margin-left: 60.5%;
     font-size: 1vmax;
     font-weight: 400;
     color: white;
     width: 35%;
-    text-align: left;
+    text-align: right;
 }
 
-.containerGhostAzul {
-    background-color: #030D23;
-    width: 100%;
-    height: 80%;
-}
-
-#ghostdata{
-    margin-left: 49%;
-    margin-top: 1%;
-    height: 60%; 
-    border-radius: 2vmax;;
-}
-
-#bioma1Ghost{
-    width: 20%;
-    margin-left: 50%;
-    border-radius: 2vmax;
-    height: 15%;
-    width: 45%;
-}
-
-#bioma2Ghost{
-    width: 20%;
-    border-radius: 2vmax;
-    height: 15%;
-    margin-top: 2%;
-    margin-left: 3.5%;
-}
-
-#tituloDataGhost {
-    margin-top: 1%;
+.dataBankGhost{
+    display: flex;
+    height: 6%;
+    width: 8%;
     position: absolute;
-    margin-left: 4%;
-    font-size: 2vmax;
+    top: 365%;
+    left: 87.6%;
+    align-items: center;
+    justify-content: center;
+    background-color: #E48709;
+    opacity: 75%;
+    border-radius: 1vmax;
+    cursor: pointer;
+
+}
+
+#dataBankG{
+    display: flex;
+    color: #030D23;
+    font-weight: 800;
+    font-size: 0.8vmax;
+}
+
+#menuGhosta{
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 63%;
+    background-color: #030d23;
+    z-index: 2;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 2vmax;
+    flex-direction: column;
+    margin-left: 47%;
+}
+
+#botaoG{ 
+    height: 5%;
+    width: 8%;
+    background-color: #E48709;
+    border: #E48709;
+    border-radius: 1vmax;
+    font-size: 0.7vmax;
     font-weight: 800;
     color: white;
+    margin-top: 2%;
+    margin-left: 2%;
+    cursor: pointer;
 }
 
-#textoDataGhost {
-    position: absolute;
-    margin-top:5%;
-    margin-left: 4%;
-    font-size: 1vmax;
-    font-weight: 400;
+#tituloDataBankG{
+    display: flex;
+    margin-left: 15%;
     color: white;
-    width: 35%;
+    font-weight: 800;
+    font-size: 2vmax;
+}
+
+#textoDataBankG{
+    display: flex;
+    color: white;
+    margin-left: 15%;
+    height: 60%;
+    width: 80%;
+    flex-direction: column;
 }
 
 /* SEA DRAGON */
@@ -417,7 +537,7 @@ body {
 
 #fundoseadragon{
     height: 90%;
-    width: 75%;
+    width: 95%;
     margin-left: 2%;
     margin-top: 2%;
     border-radius: 2vmax;
@@ -442,7 +562,7 @@ body {
 
 #textoSeaDragon {
     position: absolute;
-    margin-top: 18%;
+    margin-top: 19%;
     margin-left: 4%;
     font-size: 1vmax;
     font-weight: 400;
@@ -450,52 +570,70 @@ body {
     width: 35%;
 }
 
-.containerSeaDragonAzul {
-    background-color: #030D23;
-    width: 100%;
-    height: 85%;
-}
-
-#seadragondata{
-    margin-left: 45%;
-    margin-top: 1%;
-    height: 60%; 
-    border-radius: 2vmax;;
-}
-
-#bioma1SeaDragon{
-    width: 20%;
-    margin-left: 50%;
-    border-radius: 2vmax;
-    height: 25%;
-}
-
-#bioma2SeaDragon{
-    width: 20%;
-    border-radius: 2vmax;
-    height: 25%;
-    margin-top: 2%;
-    margin-left: 3.5%;
-}
-
-#tituloDataSeaDragon {
-    margin-top: 1%;
+.dataBankSeaDragon{
+    display: flex;
+    height: 6%;
+    width: 8%;
     position: absolute;
-    margin-left: 4%;
-    font-size: 2vmax;
+    top: 430%;
+    left: 4%;
+    align-items: center;
+    justify-content: center;
+    background-color: #E48709;
+    opacity: 75%;
+    border-radius: 1vmax;
+    cursor: pointer;
+}
+
+#dataBankSD{
+    display: flex;
+    color: #030D23;
+    font-weight: 800;
+    font-size: 0.8vmax;
+}
+
+#menuSeaDragona{
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 65%;
+    background-color: #030d23;
+    z-index: 2;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 2vmax;
+    flex-direction: column;
+}
+
+#botaoSD{ 
+    height: 5%;
+    width: 8%;
+    background-color: #E48709;
+    border: #E48709;
+    border-radius: 1vmax;
+    font-size: 0.7vmax;
     font-weight: 800;
     color: white;
-
+    margin-top: 2%;
+    margin-left: 2%;
+    cursor: pointer;
 }
 
-#textoDataSeaDragon{
-    position: absolute;
-    margin-top:5%;
-    margin-left: 4%;
-    font-size: 1vmax;
-    font-weight: 400;
+#tituloDataBankSD{
+    display: flex;
+    margin-left: 15%;
     color: white;
-    width: 35%;
+    font-weight: 800;
+    font-size: 2vmax;
+}
+
+#textoDataBankSD{
+    display: flex;
+    color: white;
+    margin-left: 15%;
+    height: 60%;
+    width: 80%;
+    flex-direction: column;
 }
 
 /* SEA EMPEROR */
@@ -506,8 +644,8 @@ body {
 
 #fundoseaemperor{
     height: 90%;
-    width: 75%;
-    margin-left: 23%;
+    width: 95%;
+    margin-left: 2%;
     margin-top: 2%;
     border-radius: 2vmax;
 }
@@ -515,7 +653,7 @@ body {
 #seaemperor {
     height: 70%;
     width: 50%;
-    margin-top: 1.5%;
+    margin-top: 0.4%;
     margin-left: -100%;
     position: absolute;
     z-index: 2;
@@ -535,61 +673,79 @@ body {
 #textoSeaEmperor {
     display: flex;
     position: absolute;
-    margin-top: 18%;
-    margin-left: 61.5%;
+    margin-top: 19%;
+    margin-left: 60.5%;
     font-size: 1vmax;
     font-weight: 400;
     color: white;
     width: 35%;
-    text-align: left;
+    text-align: right;
 }
 
-.containerSeaEmperorAzul {
-    background-color: #030D23;
-    width: 100%;
-    height: 80%;
-}
-
-#seaemperordata{
-    margin-left: 47%;
-    margin-top: 1%;
-    height: 45%; 
-
-    border-radius: 2vmax;;
-}
-
-#bioma1SeaEmperor{
-    width: 20%;
-    margin-left: 50%;
-    border-radius: 2vmax;
-    height: 15%;
-    width: 45%;
-}
-
-#bioma2SeaEmperor{
-    width: 20%;
-    border-radius: 2vmax;
-    height: 15%;
-    margin-top: 2%;
-    margin-left: 3.5%;
-}
-
-#tituloDataSeaEmperor {
-    margin-top: 1%;
+.dataBankSeaEmperor{
+    display: flex;
+    height: 6%;
+    width: 8%;
     position: absolute;
-    margin-left: 4%;
-    font-size: 2vmax;
+    top: 498%;
+    left: 87.6%;
+    align-items: center;
+    justify-content: center;
+    background-color: #E48709;
+    opacity: 75%;
+    border-radius: 1vmax;
+    cursor: pointer;
+
+}
+
+#dataBankSE{
+    display: flex;
+    color: #030D23;
+    font-weight: 800;
+    font-size: 0.8vmax;
+}
+
+#menuSeaEmperora{
+    display: flex;
+    position: absolute;
+    width: 50%;
+    height: 63%;
+    background-color: #030d23;
+    z-index: 2;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 2vmax;
+    flex-direction: column;
+    margin-left: 47%;
+}
+
+#botaoSE{ 
+    height: 5%;
+    width: 8%;
+    background-color: #E48709;
+    border: #E48709;
+    border-radius: 1vmax;
+    font-size: 0.7vmax;
     font-weight: 800;
     color: white;
-
+    margin-top: 2%;
+    margin-left: 2%;
+    cursor: pointer;
 }
 
-#textoDataSeaEmperor {
-    position: absolute;
-    margin-top:5%;
-    margin-left: 4%;
-    font-size: 1vmax;
-    font-weight: 400;
+#tituloDataBankSE{
+    display: flex;
+    margin-left: 15%;
     color: white;
-    width: 35%;
+    font-weight: 800;
+    font-size: 2vmax;
+}
+
+#textoDataBankSE{
+    display: flex;
+    color: white;
+    margin-left: 15%;
+    height: 60%;
+    width: 80%;
+    flex-direction: column;
 }
