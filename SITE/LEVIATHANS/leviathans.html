@@ -12,9 +12,9 @@
         <div class="header">
             <div class="logo"> <img src="imgs/Subnautica_Logo.webp" alt=""></div>
             <div class="navbar">
-                <span id="homeNavbar">HOME</span>
-                <span id="historiaNavbar">HISTÓRIA</span>
-                <span id="habitatNavbar">HABITAT</span>
+                <span onclick="ir_pagindex()" id="homeNavbar">HOME</span>
+                <span onclick="ir_paghistoria()" id="historiaNavbar">HISTÓRIA</span>
+                <span onclick="ir_paghabitat()" id="habitatNavbar">HABITAT</span>
                 <span id="leviathansNavbar">LEVIATHANS</span>
             </div>
     </div>
@@ -275,4 +275,17 @@
         botaoVoltarSeaEmperor() 
     }
 
+    // navegação de site
+    function ir_pagindex(){
+        window.location.href = "../HOME/index.html";
+    }
+    function ir_paghistoria(){
+        window.location.href = "../HISTÓRIA/historia.html";
+    }
+    function ir_pagleviathan(){
+        window.location.href = "../LEVIATHANS/leviathans.html";
+    } 
+    function ir_paghabitat(){
+        window.location.href = "../HABITAT/habitat.html";
+    }
 </script>

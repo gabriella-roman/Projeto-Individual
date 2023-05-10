@@ -13,9 +13,9 @@
             <div class="logo"> <img src="IMGS/Subnautica_Logo.webp" alt=""></div>
             <div class="navbar">
                 <span id="homeNavbar">HOME</span>
-                <span id="irpagdehistoria" onclick="ir_pagHistoria()">HISTÓRIA</span>
-                <span>HABITAT</span>
-                <span id="irpagdeleviathans" onclick="ir_pagLeviathan()">LEVIATHANS</span>
+                <span id="irpagdehistoria" onclick="ir_paghistoria()">HISTÓRIA</span>
+                <span id="irpagdehabitat" onclick="ir_paghabitat()">HABITAT</span>
+                <span id="irpagdeleviathans" onclick="ir_pagleviathan()">LEVIATHANS</span>
             </div>
             
         </div>
@@ -52,7 +52,7 @@
                 Placa gráfica: Intel HD 4600 or equivalent</span>
         </div>
         <div class="requisitosMacos">
-            <span id="plataformas">REQUISITOS MÍNIMOS MACOS:</span>
+            <span id="plataformas">REQUISITOS MÍNIMOS MAC OS:</span>
             <span>Requer um sistema operativo e processador de 64 bits
                 Sistema Operativo: OS X 10.9 Mavericks
                 Processador: Intel Haswell 2 cores / 4 threads @ 2.5Ghz or equivalent
@@ -70,12 +70,14 @@
 </html>
 
 <script>
-    
-    'function ir_pagLeviathan(){
-        const irpagdeleviathans = document.getElementById("irpagdeleviathans");
-
-        
-        window.location.href = "../LEVIATHANS/Página Leviathans.html"};
-    
+    function ir_paghabitat(){
+        window.location.href = "../HABITAT/habitat.html";
+    }
+    function ir_paghistoria(){
+        window.location.href = "../HISTÓRIA/historia.html";
+    }
+    function ir_pagleviathan(){
+        window.location.href = "../LEVIATHANS/leviathans.html";
+    }
     
 </script>
