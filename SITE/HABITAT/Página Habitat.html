@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="header">
+            <div class="logo"> <img src="imgs/Subnautica_Logo.webp" alt=""></div>
+            <div class="navbar">
+                <span id="homeNavbar">HOME</span>
+                <span id="irpagdehistoria" onclick="ir_pagHistoria()">HISTÓRIA</span>
+                <span id="habitatNavbar">HABITAT</span>
+                <span id="irpagdeleviathans" onclick="ir_pagLeviathan()">LEVIATHANS</span>
+            </div>
+            
+        </div>
+        <div class="conteudoBanner">
+            <span id="tituloBanner">SAIBA UM POUCO SOBRE OS BIOMAS!</span>
+            <span id="textoBanner">Em Subnautica, durante a exploração submarina, o jogador vislumbra vários biomas, cada uma com seu próprio conjunto de criaturas, recursos e paisagens únicas. Esses são exemplos dos biomas que podem ser encontrados. Cada biomas apresenta diferentes desafios e oportunidades de exploração, o que torna o jogo uma experiência única e emocionante.</span>
+        </div>
+    </div>
+
+    <div class="conteiner">
+        <div class="blocoBiomas">
+            <div class="tituloTopo"><span id="tituloBioma">BLOOD KELP ZONE</span></div>
+            <div class="imagemBioma"></div>
+            <div class="sombra"></div>
+            <div class="conteudoTexto"><span id="tituloConteudoBioma">FAIXA DE PROFUNDIDADE:</span>
+                150 - 675 metros (Tricheira)<br>
+                200 - 580 metros (Norte)<br>
+                <span id="tituloConteudoBioma">COLHEITA:</span>
+                Xisto<br>
+                <span id="tituloConteudoBioma">ONDE PODE SER ENCONTRADO:</span>
+                Grande Naufrágio (Trincheira)<br>
+                Lifepod destruído (Norte)<br>
+                Santuário de Algas de Sangue (Norte)</div>
+                <button id="botaoAnterior" onclick="anterior()">ANTERIOR</button>
+                <button id="botaoPosterior" onclick="posterior()">POSTERIOR</button>
+        </div>
+
+    </div>
+</body>
+</html>
