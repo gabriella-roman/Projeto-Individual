@@ -7,6 +7,7 @@ body {
     margin: 0;
     width: 100%;
     height: 100vh;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .banner {
@@ -63,20 +64,20 @@ body {
     width: 57%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    margin-top: 1%;
 }
 #tituloBanner{
     font-size: 2.8vmax;
     font-weight: 700;
     margin-left: 5%;
-    margin-top: -0.5%;
+    margin-top: 1%;
     font-family: 'Montserrat', sans-serif;
     color: #E48709;
 }
 
 #textoBanner{
     font-size: 1.1vmax;
-    margin-top: 2%;
-    line-height: 35px;
+    margin-top: 0.5%;
     margin-left: 5%;
     width: 57%;
     font-family: 'Work Sans', sans-serif;
@@ -102,7 +103,7 @@ body {
     width: 50%;
     position: absolute;
     margin-top: 3.5%;
-    margin-left: -48%;
+    left: 48%;
 }
 
 #tituloSeaTreader {
@@ -131,7 +132,7 @@ body {
     height: 6%;
     width: 8%;
     position: absolute;
-    top: 154%;
+    top: 158%;
     left: 4%;
     align-items: center;
     justify-content: center;
@@ -153,13 +154,14 @@ body {
     display: flex;
     position: absolute;
     width: 50%;
-    height: 63%;
+    height: 80%;
     background-color: #030D23;
-    z-index: 2;
+    z-index: 5;
     margin-left: 2%;
     margin-top: 2%;
     border-radius: 2vmax;
     flex-direction: column;
+    font-family: 'Work Sans', sans-serif;
 }
 
 #botaoST{ 
@@ -169,7 +171,7 @@ body {
     border: #E48709;
     border-radius: 1vmax;
     font-size: 0.7vmax;
-    font-weight: 800;
+    font-weight: 500;
     color: white;
     margin-top: 2%;
     margin-left: 2%;
@@ -244,7 +246,7 @@ body {
     height: 6%;
     width: 8%;
     position: absolute;
-    top: 227%;
+    top: 230%;
     left: 87.6%;
     align-items: center;
     justify-content: center;
@@ -266,7 +268,7 @@ body {
     display: flex;
     position: absolute;
     width: 50%;
-    height: 72%;
+    height: 122%;
     background-color: #030d23;
     z-index: 2;
     margin-left: 2%;
@@ -277,8 +279,8 @@ body {
 }
 
 #botaoRB{ 
-    height: 5%;
-    width: 8%;
+    height: 4%;
+    width:10%;
     background-color: #E48709;
     border: #E48709;
     border-radius: 1vmax;
@@ -354,7 +356,7 @@ body {
     height: 6%;
     width: 8%;
     position: absolute;
-    top: 291%;
+    top: 294%;
     left: 4%;
     align-items: center;
     justify-content: center;
@@ -376,7 +378,7 @@ body {
     display: flex;
     position: absolute;
     width: 50%;
-    height: 63%;
+    height: 82%;
     background-color: #030d23;
     z-index: 2;
     margin-left: 2%;
@@ -467,7 +469,7 @@ body {
     height: 6%;
     width: 8%;
     position: absolute;
-    top: 365%;
+    top: 368%;
     left: 87.6%;
     align-items: center;
     justify-content: center;
@@ -489,7 +491,7 @@ body {
     display: flex;
     position: absolute;
     width: 50%;
-    height: 63%;
+    height: 100%;
     background-color: #030d23;
     z-index: 2;
     margin-left: 2%;
@@ -576,7 +578,7 @@ body {
     height: 6%;
     width: 8%;
     position: absolute;
-    top: 430%;
+    top: 435%;
     left: 4%;
     align-items: center;
     justify-content: center;
@@ -597,13 +599,14 @@ body {
     display: flex;
     position: absolute;
     width: 50%;
-    height: 65%;
+    height: 110%;
     background-color: #030d23;
     z-index: 2;
     margin-left: 2%;
     margin-top: 2%;
     border-radius: 2vmax;
     flex-direction: column;
+    z-index: 5;
 }
 
 #botaoSD{ 
@@ -688,7 +691,7 @@ body {
     height: 6%;
     width: 8%;
     position: absolute;
-    top: 498%;
+    top: 505%;
     left: 87.6%;
     align-items: center;
     justify-content: center;
@@ -710,7 +713,7 @@ body {
     display: flex;
     position: absolute;
     width: 50%;
-    height: 63%;
+    height: 110%;
     background-color: #030d23;
     z-index: 2;
     margin-left: 2%;
