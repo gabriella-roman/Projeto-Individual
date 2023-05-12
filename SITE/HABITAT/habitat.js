@@ -25,6 +25,7 @@ var proximoSlide = false
 var totalSlides = [
     slide1 = {
         titulo: 'BLOOD KELP ZONE',
+        imagemdoBioma: 'url(imgs/BloodKELPZONE.webp)',
         faixa1: '150 - 675 metros (Trincheira)',
         faixa2: '200 - 580 metros (Norte)',
         material: 'Xisto',
@@ -34,6 +35,7 @@ var totalSlides = [
     },
     slide2 = {
         titulo: 'BULB ZONE',
+        imagemdoBioma: 'url(imgs/5601492-subnautica-hd-wallpapers.jpg)',
         faixa1: '140 - 480 metros',
         faixa2: '',
         material: 'Afloramento de arenito, Afloramento do Xisto',
@@ -43,6 +45,7 @@ var totalSlides = [
     },
     slide3 = {
         titulo: 'CRAG FIELD',
+        imagemdoBioma: 'url(./imgs/BloodKELPZONE.webp)',
         faixa1: '125 - 460 metros',
         faixa2: '',
         material: 'Afloramento Calcário, Afloramento de arenito, Afloramento do Xisto',
@@ -52,6 +55,7 @@ var totalSlides = [
     },
     slide4 = {
         titulo: 'CRASH ZONE',
+        imagemdoBioma: 'url(./imgs/BloodKELPZONE.webp)',
         faixa1: '0 - 370 metros',
         faixa2: '',
         material: 'Afloramento de Calcário, Afloramento de Arenito',
@@ -61,6 +65,7 @@ var totalSlides = [
     },
     slide5 = {
         titulo: 'DUNES',
+        imagemdoBioma: 'url(./imgs/BloodKELPZONE.webp)',
         faixa1: '65 - 400 metros',
         faixa2: '',
         material: 'Afloramento de Calcário, Afloramento de Arenito',
@@ -70,6 +75,7 @@ var totalSlides = [
     },
     slide6 = {
         titulo: 'GRAND REEF',
+        imagemdoBioma: 'url(./imgs/BloodKELPZONE.webp)',
         faixa1: '150 - 480 metros',
         faixa2: '',
         material: 'Afloramento de Xisto, Afloramento do Arenito, Afloramento de Calcário',
@@ -79,6 +85,7 @@ var totalSlides = [
     },
     slide7 = {
         titulo: 'GRASSY PLATEAUS',
+        imagemdoBioma: 'url(./imgs/BloodKELPZONE.webp)',
         faixa1: '50 - 170 metros',
         faixa2: '',
         material: 'Afloramento de Arenito, Afloramento de Calcário',
@@ -88,6 +95,7 @@ var totalSlides = [
     },
     slide8 = {
         titulo: 'KELP FOREST',
+        imagemdoBioma: 'url(./imgs/BloodKELPZONE.webp)',
         faixa1: '0 - 160 metros',
         faixa2: '',
         material: 'Afloramento de Calcário, Afloramento de Arenito',
@@ -97,6 +105,7 @@ var totalSlides = [
     },
     slide9 = {
         titulo: 'MUSHROOM FOREST',
+        imagemdoBioma: 'url(./imgs/BloodKELPZONE.webp)',
         faixa1: '75 - 250 metros (Noroeste)',
         faixa2: '125 - 200 metros (Nordeste)',
         material: 'Afloramento de Calcário, Afloramento de Arenito, Afloramento do Xisto, Pinha Roxa',
@@ -106,6 +115,7 @@ var totalSlides = [
     },
     slide10 = {
         titulo: 'LAVA ZONE',
+        imagemdoBioma: 'url(./imgs/BloodKELPZONE.webp)',
         faixa1: '1300 - 1700 metros',
         faixa2: '',
         material: 'Cianita',
@@ -120,6 +130,7 @@ function posterior() {
     if (posicaoSlide < totalSlides.length){
         posicaoSlide++
         tituloBioma.innerHTML = totalSlides[posicaoSlide].titulo
+        imagemdoBioma.innerHTML = totalSlides[posicaoSlide].imagemdoBioma
         faixa1.innerHTML = totalSlides[posicaoSlide].faixa1
         faixa2.innerHTML = totalSlides[posicaoSlide].faixa2
         material.innerHTML = totalSlides[posicaoSlide].material
@@ -133,6 +144,7 @@ function anterior() {
     if (posicaoSlide <= totalSlides.length){
         posicaoSlide--
         tituloBioma.innerHTML = totalSlides[posicaoSlide].titulo
+        imagemdoBioma.innerHTML = totalSlides[posicaoSlide].imagemdoBioma
         faixa1.innerHTML = totalSlides[posicaoSlide].faixa1
         faixa2.innerHTML = totalSlides[posicaoSlide].faixa2
         material.innerHTML = totalSlides[posicaoSlide].material

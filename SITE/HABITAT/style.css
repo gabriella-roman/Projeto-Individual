@@ -87,12 +87,18 @@ body {
 }
 
 .imagemBioma{
-    background-color: #E48709;
     background-size: cover;
     height: 60%;
     width: 50%;
     border-radius: 2vmax;
     margin-left: 5%;
+}
+
+#imagemdoBioma{
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 2vmax;
 }
 
 .sombra{
