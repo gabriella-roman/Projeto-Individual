@@ -4,8 +4,8 @@ body {
     height: 100vh;
 }
 
-.banner {
-    background-color: black;
+.bannerPercursores {
+    background-image: url(imgs/construção\ precursores.jpg);
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -41,21 +41,240 @@ body {
     color: #E48709;
 }
 
-.conteudoBanner{
+/* HISTORIA PRECURSORES */
+#tituloPrecursores{
     display: flex;
-    margin-top: 30%;
-    width: 50%;
-    flex-direction: column;
+    position: absolute;
+    font-size: 3vmax;
+    font-weight: 900;
     color: white;
-    margin-left: 5%;
+    justify-content: center;
+    top: 96%;
+    width: 100%;
+    z-index: 2;
 }
 
-#tituloBanner{
-    font-size: 2vmax;
+.historiaPrecursores{
+    background-color:  #030D23;
+    width: 100%;
+    height: 140%;
+    position: relative;
+}
+
+.imagemSeaEmperor{
+    background-image: url(imgs/aprisionamento\ sea\ emperor.jpg);
+    height: 34%;
+    width: 60%;
+    background-size: cover;
+    position: absolute;
+    right: 2%;
+    top: 5%;
+    border-radius: 1vmax;
+}
+
+.textoHistoria1{
+    height: 60%;
+    width: 35%;
+    position: absolute;
+    top: 5%;
+    font-size: 1.34vmax;
+    left: 2%;
+    color: white;
+    text-align: right;
+}
+
+.textoHistoria2{
+    display: flex;
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    top: 42%;
+    justify-content: center;
+}
+
+#texto{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    font-size: 1.2vmax;
+    color: white;
+    text-align: center;
+}
+
+.imagemBaseQuebrada{
+    background-image: url(imgs/base\ quebrada.webp);
+    height: 36.6%;
+    width: 60%;
+    background-size: cover;
+    position: absolute;
+    border-radius: 1vmax;
+    top: 60%;
+    left: 2%;
+}
+
+.textoHistoria3{
+    position: absolute;
+    top: 60%;
+    font-size: 1.34vmax;
+    color: white;
+    height: 35%;
+    width: 35%;
+    right: 2%;
+}
+
+/* HISTÓRIA DEGASI */
+.bannerDegasi{
+    background-image: url(imgs/base\ degasi.webp);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+#tituloDegasi{
+    display: flex;
+    position: absolute;
+    font-size: 3vmax;
+    font-weight: 900;
+    color: white;
+    justify-content: center;
+    top: 336%;
+    width: 100%;
+    z-index: 2;
+}
+
+.historiaDegasi{
+    background-color:  #030D23;
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+.textoHistoria1Degasi{
+    height: 60%;
+    width: 90%;
+    position: absolute;
+    top:5%;
+    font-size: 1.34vmax;
+    left: 2%;
+    color: white;
+    text-align: center;
+}
+
+.imagemBaseDegasi{
+    background-image: url(imgs/base\ degasi\ 2.webp);
+    height: 40%;
+    width: 60%;
+    background-size: cover;
+    position: absolute;
+    border-radius: 1vmax;
+    top: 30%;
+    right: 2%;
+    background-position: 20% 10%;
+}
+
+.textoHistoria2Degasi{
+    display: flex;
+    height: 23%;
+    width: 35%;
+    position: absolute;
+    text-align: right;
+    top: 30%;
+    left: 2%;
+    color: white;
+    font-size: 1.2vmax;
+}
+
+.textoHistoria3Degasi{
+    display: flex;
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    top: 73%;
+    justify-content: center;
+}
+
+#textoDegasi{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    font-size: 1.2vmax;
+    color: white;
+    text-align: center;
+}
+
+/* HISTÓRIA AURORA */
+.bannerAurora{
+    background-image: url(imgs/aurora3.png);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+#tituloAurora{
+    display: flex;
+    position: absolute;
+    font-size: 3vmax;
+    font-weight: 900;
+    color: white;
+    justify-content: center;
+    top: 516%;
+    width: 100%;
+    z-index: 2;
+}
+
+.historiaAurora{
+    background-color:  #030D23;
+    width: 100%;
+    height: 90%;
+    position: relative;
+}
+
+.imagemAurora{
+    background-image: url(imgs/plataforma\ de\ execução.webp);
+    height: 60%;
+    width: 60%;
+    background-size: cover;
+    position: absolute;
+    right: 2%;
+    top: 5%;
+    border-radius: 1vmax;
+    background-position: 20% 30%;
+}
+
+.textoHistoria1Aurora{
+    height: 60%;
+    width: 35%;
+    position: absolute;
+    top: 5%;
+    font-size: 1.34vmax;
+    left: 2%;
+    color: white;
+    text-align: right;
+}
+
+.textoHistoria2Aurora{
+    display: flex;
+    height: 55%;
+    width: 40%;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+}
+
+#textoAurora{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    font-size: 1.2vmax;
+    color: white;
+    text-align: right;
+}
+
+.fraseDeEfeito{
+    position: absolute;
+    top: 70%;
+    font-size: 1.6vmax;
+    font-weight: 900;
     color: #E48709;
-    font-weight: 800;
-}
-
-#textoBanner{
-    font-size: 1vmax;
+    left: 38%;
 }

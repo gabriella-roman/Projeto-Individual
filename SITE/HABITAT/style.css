@@ -65,7 +65,7 @@ body {
     font-size: 1vmax;
 }
 
-.conteiner{
+.container{
     display: flex;
     background-image: url(imgs/imagemborrada.jpg);
     background-size: cover;
@@ -88,7 +88,6 @@ body {
 
 .imagemBioma{
     background-color: #E48709;
-    background-image: url(imgs/BloodKELPZONE.webp);
     background-size: cover;
     height: 60%;
     width: 50%;
@@ -118,7 +117,7 @@ body {
     margin-left: 6%;
 }
 
-#tituloConteudoBioma {
+.tituloConteudoBioma {
     color: #E48709;
     font-size: 1.5vmax;
     font-weight: 700;

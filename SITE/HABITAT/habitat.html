@@ -25,39 +25,22 @@
         </div>
     </div>
 
-    <div class="conteiner">
+    <div class="container">
         <div class="blocoBiomas">
-            <div class="tituloTopo"><span id="tituloBioma">BLOOD KELP ZONE</span></div>
-            <div class="imagemBioma"></div>
+            <div class="tituloTopo"><span id="tituloBioma" class="tituloConteudoBioma">BLOOD KELP ZONE</span></div>
+            <div class="imagemBioma" id="imagemdoBioma"></div>
             <div class="sombra"></div>
-            <div class="conteudoTexto"><span id="tituloConteudoBioma">FAIXA DE PROFUNDIDADE:</span>
-                150 - 675 metros (Tricheira)<br>
-                200 - 580 metros (Norte)<br>
-                <span id="tituloConteudoBioma">COLHEITA:</span>
-                Xisto<br>
-                <span id="tituloConteudoBioma">ONDE PODE SER ENCONTRADO:</span>
-                Grande Naufrágio (Trincheira)<br>
-                Lifepod destruído (Norte)<br>
-                Santuário de Algas de Sangue (Norte)</div>
-                <button id="botaoAnterior" onclick="anterior()">ANTERIOR</button>
-                <button id="botaoPosterior" onclick="posterior()">POSTERIOR</button>
-        </div>
-    </div>
-
-    <div id="teste" class="conteiner">
-        <div class="blocoBiomas">
-            <div class="tituloTopo"><span id="tituloBioma">AAA</span></div>
-            <div class="imagemBioma"></div>
-            <div class="sombra"></div>
-            <div class="conteudoTexto"><span id="tituloConteudoBioma">FAIXA DE PROFUNDIDADE:</span>
-                150 - 675 metros (Tricheira)<br>
-                200 - 580 metros (Norte)<br>
-                <span id="tituloConteudoBioma">COLHEITA:</span>
-                Xisto<br>
-                <span id="tituloConteudoBioma">ONDE PODE SER ENCONTRADO:</span>
-                Grande Naufrágio (Trincheira)<br>
-                Lifepod destruído (Norte)<br>
-                Santuário de Algas de Sangue (Norte)</div>
+            <div class="conteudoTexto">
+                <span id="tituloFaixa" class="tituloConteudoBioma">FAIXA DE PROFUNDIDADE:</span>
+                <span id="faixa1">150 - 675 metros (Tricheira)</span><br>
+                <span id="faixa2">200 - 580 metros (Norte)</span><br>
+                <span id="tituloColheita" class="tituloConteudoBioma">COLHEITA:</span>
+                <span id="material">Xisto<br></span> 
+                <span id="tituloPodeSerEncontrado" class="tituloConteudoBioma">ONDE PODE SER ENCONTRADO:</span>
+                <span id="lugar1">Grande Naufrágio (Trincheira)<br></span> 
+                <span id="lugar2">Lifepod destruído (Norte)<br></span> 
+                <span id="lugar3">Santuário de Algas de Sangue (Norte)</span> 
+            </div>
                 <button id="botaoAnterior" onclick="anterior()">ANTERIOR</button>
                 <button id="botaoPosterior" onclick="posterior()">POSTERIOR</button>
         </div>
@@ -65,35 +48,4 @@
 </body>
 </html>
 
-<script>
-    function ir_pagindex(){
-        window.location.href = "../HOME/index.html";
-    }
-    function ir_paghistoria(){
-        window.location.href = "../HISTÓRIA/historia.html";
-    }
-    function ir_pagleviathan(){
-        window.location.href = "../LEVIATHANS/leviathans.html";
-    }
-
-    // testando carrosel
-    var proximoSlide = false
-    var slideAtual = 0
-    teste.style.display = "none"
-    var slideAtual = [
-        slideAtual = teste.innerHTML
-    ]
-
-    while(proximoSlide == true) {
-        slideAtual = 1
-        proximoSlide = false
-    }
-
-    function posterior() {
-        if (proximoSlide == false) {
-            proximoSlide = true
-        } else {
-            proximoSlide = false
-        }
-    }
-</script>
+<script src="./habitat.js"></script>
