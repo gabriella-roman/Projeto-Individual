@@ -49,8 +49,7 @@ body {
 .containerBranco {
     display: flex;
     width: 100%;
-    height: 60%;
-    background-color: rgb(255, 255, 255);
+    height: 65%;
     flex-direction: column;
 }
 
@@ -219,64 +218,61 @@ body {
     font-size: 1vmax;
 }
 
-.gradienteTextoBanner{
-background: linear-gradient(180deg, rgba(24, 14, 58, 0.58) 9.9%, rgba(33, 112, 171, 0) 100%);
-transform: rotate(-90deg);
-}
-
-
-.parteBaixo{
+.containerQuiz {
     display: flex;
     width: 100%;
-    height: 10%;
+    height: 30%;
+    flex-direction: column;
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
+}
+
+.tituloQuiz{
+    display: flex;
+    height: 5%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vmax;
+    font-weight: 900;
+    margin-top: 6%;
+    color: white;
+}
+
+.botaoStart{
+    display: flex;
+    height: 30%;
+    width: 100%;
+    justify-content: center;
     margin-top: 3%;
-    gap: 9%;
 }
-.quadradoHistoria {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(IMGS/historia.png);
-    background-size: cover;
-    height: 100%;
-    width: 20%;
-    border-radius: 20px;
+
+#botaoStart{
+    background-color: #030D23;
+    border: 0;
+    border-radius: 2vmax;
     color: white;
+    width: 20%;
+    height: 100%;
     font-size: 1vmax;
     font-weight: 600;
     cursor: pointer;
 }
 
-.quadradoHabitat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(IMGS/habitats.png);
-    background-size: cover;
-    height: 100%;
-    width: 20%;
-    border-radius: 20px;
-    color: white;
-    font-size: 1vmax;
-    font-weight: 600;
-    cursor: pointer;
+
+.containerInternoQuiz{
+    background-color: #E48709;
+    width: 50%;
+    height: 90%;
+    border-radius: 5vmax;
 }
 
-.quadradoLeviathan {
+#textoQuiz{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(IMGS/leviata.png);
-    background-size: cover;
-    background-position: 1%;
-    height: 100%;
-    width: 20%;
-    border-radius: 20px;
-    color: white;
     font-size: 1vmax;
     font-weight: 600;
-    cursor: pointer;
+    color: white;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3%;
 }
-
