@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,28 @@
 <body>
     <div class="banner">
         <div class="conteudoQuiz">
-            <span id="pergunta">O Reaper é da classe?</span>
+            <span class="tituloQuiz">Antes de começar, insira seus dados</span>
+            <div class="inputParaQuiz">
+                NOME: <input type="text" id="input_nome_usuario">
+                EMAIL: <input type="text" id="input_email_usuario">
+                <span id="spanErro"></span>
+                <button id="botaoComeçar" onclick="começar()">COMEÇAR!</button>
+                
+            </div>
+        </div>
+
+        <div id="quiz" class="conteudoQuestionario">
+            <span class="tituloQuiz" id="tituloQuestionario">Que classe o Reaper pertence?</span>
+            <div class="opcoes">
+                <span class="mudarCor1" onclick="mudarCorOpcao1()" id="opcao1">Leviathan</span>
+                <span class="mudarCor2" onclick="mudarCorOpcao2()" id="opcao2">Peixe</span>
+                <span class="mudarCor3" onclick="mudarCorOpcao3()" id="opcao3">Quem é Reaper?</span>
+                <span class="mudarCor4" onclick="mudarCorOpcao4()" id="opcao4">Nenhuma das opções anteriores</span>
+            </div>
+            <button id="proxPergunta" onclick="proximaPergunta()">PRÓXIMA PERGUNTA</button>
         </div>
     </div>
 </body>
 </html>
+
+<script src="./quiz.js"></script>
