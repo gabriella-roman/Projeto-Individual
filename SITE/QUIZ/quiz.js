@@ -109,9 +109,7 @@ function selecionarOpcao1() {
             respostaCerta = true
         }
     } else {
-        if(contador == 0) {
             respostaCerta = false
-        }
     } 
     }
 
@@ -130,6 +128,7 @@ function selecionarOpcao2() {
         mudarCor2.style.backgroundColor = "#E48709"
         contador2--
     }
+    respostaCerta = false
 }
 
 function selecionarOpcao3() {
@@ -146,9 +145,14 @@ function selecionarOpcao3() {
         mudarCor3.style.backgroundColor = "#E48709"
         contador3--
     }
+
     if (posicaoPergunta == 1) {
-        respostaCerta = true
-    }
+        if(contador3 == 1){
+            respostaCerta = true
+        }
+    } else {
+            respostaCerta = false
+    } 
 }
 
 function selecionarOpcao4() {
@@ -165,12 +169,13 @@ function selecionarOpcao4() {
         mudarCor4.style.backgroundColor = "#E48709"
         contador4--
     }
-    if (posicaoPergunta == 2) {
-        respostaCerta = true
-    }
-    if (posicaoPergunta == 4) {
-        respostaCerta = true
-    }
+    if (posicaoPergunta == 2 || posicaoPergunta == 4 ) {
+        if(contador4 == 1){
+            respostaCerta = true
+        }
+    } else {
+            respostaCerta = false
+    } 
 }
 
 /* VOLTAR PARA PÁGINA INICIAL*/
