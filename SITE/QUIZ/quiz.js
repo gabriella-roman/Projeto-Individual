@@ -91,7 +91,7 @@ function começar() {
 /* SISTEMA DE PONTUAÇÃO */
 function selecionarOpcao1() {
 
-    if (contador == 0 && (posicaoPergunta == 0 || posicaoPergunta == 3)) {
+    if (contador == 0) {
         mudarCor1.style.backgroundColor = "red"
         mudarCor2.style.backgroundColor = "#E48709"
         contador2 = 0
@@ -100,19 +100,21 @@ function selecionarOpcao1() {
         mudarCor4.style.backgroundColor = "#E48709"
         contador4 = 0
         contador++
-        respostaCerta = true
     } else {
         mudarCor1.style.backgroundColor = "#E48709"
         contador--
-        respostaCerta = false
     }
-    /*if (posicaoPergunta == 0) {
-        respostaCerta = true
+    if (posicaoPergunta == 0 || posicaoPergunta == 3 ) {
+        if(contador == 1){
+            respostaCerta = true
+        }
+    } else {
+        if(contador == 0) {
+            respostaCerta = false
+        }
+    } 
     }
-    if (posicaoPergunta == 3) {
-        respostaCerta = true
-    }*/
-}
+
 
 function selecionarOpcao2() {
     if (contador2 == 0) {
@@ -131,7 +133,7 @@ function selecionarOpcao2() {
 }
 
 function selecionarOpcao3() {
-    if (contador3 == 0 && posicaoPergunta == 1) {
+    if (contador3 == 0) {
         mudarCor3.style.backgroundColor = "red"
         mudarCor1.style.backgroundColor = "#E48709"
         contador = 0
@@ -140,17 +142,17 @@ function selecionarOpcao3() {
         mudarCor4.style.backgroundColor = "#E48709"
         contador4 = 0
         contador3++
-        respostaCerta = true
     } else {
         mudarCor3.style.backgroundColor = "#E48709"
         contador3--
-        respostaCerta = false
     }
-    
+    if (posicaoPergunta == 1) {
+        respostaCerta = true
+    }
 }
 
 function selecionarOpcao4() {
-    if (contador4 == 0 && (posicaoPergunta == 2 || posicaoPergunta == 4)) {
+    if (contador4 == 0) {
         mudarCor4.style.backgroundColor = "red"
         mudarCor1.style.backgroundColor = "#E48709"
         contador = 0
@@ -159,13 +161,16 @@ function selecionarOpcao4() {
         mudarCor3.style.backgroundColor = "#E48709"
         contador3 = 0
         contador4++
-        respostaCerta = true
     } else {
         mudarCor4.style.backgroundColor = "#E48709"
         contador4--
-        respostaCerta = false
     }
-    
+    if (posicaoPergunta == 2) {
+        respostaCerta = true
+    }
+    if (posicaoPergunta == 4) {
+        respostaCerta = true
+    }
 }
 
 /* VOLTAR PARA PÁGINA INICIAL*/
@@ -194,6 +199,10 @@ function proximaPergunta() {
             }
         }
         respostaCerta = false
+        contador = 0
+        contador2 = 0
+        contador3 = 0
+        contador4 = 0
 
         if (posicaoPergunta < totalPerguntas.length - 1) {
             posicaoPergunta++
