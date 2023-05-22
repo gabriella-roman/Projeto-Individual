@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subnautica | Página Inicial</title>
+    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
+    <script src="js/funcoes.js"></script>
+</head>
+<body onload = "validarSessao()">
+    <div class="banner">
+        <div class="header">
+            <div class="logo"> <img src="assets/imgs/Subnautica_Logo.webp" alt=""></div>
+            <div class="navbar">
+                <span id="homeNavbar">HOME</span>
+                <span id="irpagdehistoria" onclick="ir_paghistoria()">HISTÓRIA</span>
+                <span id="irpagdehabitat" onclick="ir_paghabitat()">HABITAT</span>
+                <span id="irpagdeleviathans" onclick="ir_pagleviathan()">LEVIATHANS</span>
+                <div id="usuario" class="usuario">
+                    <span id="irpagdelogin" onclick="ir_paglogin()">ENTRAR</span>
+                    <span id="irpagdecadastro" onclick="ir_pagcadastro()">CADASTRE-SE</span>
+                </div>
+                <div id="usuarioCadastrado" class="usuarioCadastrado">
+                    <span id="irpagdelogin" onclick="sair()">SAIR</span>
+                    <img id="logoUsuario" src="assets/imgs/logoUsuario.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+        <div class="conteudoBanner">
+            <span id="tituloBanner">SAIBA TUDO SOBRE O PLANETA 4546B!</span>
+            <span id="textoBanner">O Planeta 4546B é um planeta oceânico de categoria 3 no qual a história de Subnautica se passa. Ele é habitado por várias criaturas marinhas, algumas pacíficas e outras perigosas. Existem também ruínas subaquáticas e cavernas escondidas, onde o jogador pode encontrar artefatos antigos e pistas sobre a história do planeta.</span>
+        </div>
+    </div>
+    
+
+
+
+    <div class="containerBranco">
+        <span id="tituloInformacoes">INFORMAÇÕES SOBRE O JOGO</span>
+        <div class="conteudo">
+            <div class="a">
+        <div class="containerPlataformas">
+            <span id="plataformas">PLATAFORMAS DÍSPONIVEIS:</span>
+            <span id="iconesPlataformas">
+            <img id="logoXbox" src="assets/imgs/xbox.png" alt="">
+            <img id="logoNintendo" src="assets/imgs/nintendo.png" alt="">
+            <img id="logoPlaystation" src="assets/imgs/PlayStation-Logo.png" alt="">
+            </span>
+        </div>
+        <div class="containerDesenvolvido">
+            <span id="desenvolvido">DESENVOLVIDO POR:</span>
+            <img id="logoDesenvolvido" src="assets/imgs/logoDesenvolvido.png" alt="">
+        </div>
+    </div>
+        <div class="requisitosWindows">
+            <span id="requisitosPC">REQUISITOS MÍNIMOS (PC):</span>
+            <span id="requisitosPCtexto">Requer um sistema operativo e processador de 64 bits<br>
+                Sistema Operativo: Windows Vista SP2 or newer, 64-bit<br>
+                Processador: Intel Haswell 2 cores / 4 threads @ 2.5Ghz or equivalent<br>
+                Memória: 4 GB de RAM<br>
+                Placa gráfica: Intel HD 4600 or equivalent</span>
+        </div>
+        <div class="requisitosMacos">
+            <span id="requisitosMac">REQUISITOS MÍNIMOS MAC OS:</span>
+            <span id="requisitosMactexto">Requer um sistema operativo e processador de 64 bits<br>
+                Sistema Operativo: OS X 10.9 Mavericks<br>
+                Processador: Intel Haswell 2 cores / 4 threads @ 2.5Ghz or equivalent<br>
+                Memória: 4 GB de RAM<br>
+                Placa gráfica: Intel HD 4600 or equivalent<br>
+                Espaço no disco: Requer 20 GB de espaço livre</span>
+        </div>
+    </div>
+    </div>
+
+    <div class="containerQuiz">
+        <div class="containerInternoQuiz">
+            <div class="tituloQuiz"><span>Teste seu conhecimento!</span></div>
+            <span id="textoQuiz">Responda o quiz e veja quantas perguntas você acerta!!</span>
+            <div class="botaoStart"><button id="botaoStart" onclick="começarOQuiz()">COMEÇAR</button></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        SUBNAUTICA
+    </div>
+</body>
+</html>
+
+<script>
+    const usuario = document.getElementById("usuario")
+    const usuarioCadastrado = document.getElementById("usuarioCadastrado")
+    
+    function ir_paghabitat(){
+        window.location.href = "habitat.html";
+    }
+    function ir_paghistoria(){
+        window.location.href = "historia.html";
+    }
+    function ir_pagleviathan(){
+        window.location.href = "leviathans.html";
+    }
+
+    function começarOQuiz(){
+        if(sessionStorage.EMAIL_USUARIO == undefined){
+            alert("Cadastre-se primeiro!!")
+        } else {
+            window.location.href = "quiz.html";
+        }
+    }
+
+    function ir_paglogin() {
+        window.location.href = "login.html";
+    }
+    function ir_pagcadastro() {
+        window.location.href = "cadastro.html";
+    }
+
+    function sair(){
+        sessionStorage.clear()
+        
+        if (usuario.style.display == "none") {
+            usuario.style.display = "flex"
+            usuarioCadastrado.style.display = "none"
+        }
+    }
+</script>

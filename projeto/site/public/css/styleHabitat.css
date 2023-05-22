@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.banner {
+    background-image: url(../assets/imgs/5601492-subnautica-hd-wallpapers.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 6%;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    height: 60%;
+    width: 20%;
+    margin-left: 5%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 70%;
+    gap: 10%;
+    color: white;
+    font-size: 1vmax;
+    cursor: pointer;
+    margin-left: 10%;
+    font-weight: 600;
+}
+
+#habitatNavbar{
+    color: #E48709;
+}
+
+.conteudoBanner{
+    display: flex;
+    margin-top: 30%;
+    width: 50%;
+    flex-direction: column;
+    color: white;
+    margin-left: 5%;
+}
+
+#tituloBanner{
+    font-size: 2vmax;
+    color: #E48709;
+    font-weight: 800;
+}
+
+#textoBanner{
+    font-size: 1vmax;
+}
+
+.container{
+    display: flex;
+    background-image: url(../assets/imgs/imagemborrada.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocoBiomas {
+    display: flex;
+    background-color: #112246;
+    opacity: 90%;
+    height: 75%;
+    width: 70%;
+    border-radius: 2vmax;
+    align-items: center;
+    position: relative;
+}
+
+#imagemBioma{
+    background-size: cover;
+    background-image: url(../assets/imgs/BloodKELPZONE.webp);
+    height: 60%;
+    width: 50%;
+    border-radius: 2vmax;
+    margin-left: 5%;
+}
+
+
+.sombra{
+    display: flex;
+    position: absolute;
+    background-color: #030D23;
+    height: 60%;
+    width: 50%;
+    border-radius: 2vmax;
+    margin-left: 8%;
+    margin-top: 6%;
+    z-index: -1;
+}
+
+.conteudoTexto{
+    display: flex;
+    color: white;
+    justify-content: center;
+    flex-direction: column;
+    height: 60%;
+    width: 35%;
+    margin-left: 6%;
+}
+
+.tituloConteudoBioma {
+    color: #E48709;
+    font-size: 1.5vmax;
+    font-weight: 700;
+}
+
+.tituloTopo{
+    display: flex;
+    position: absolute;
+    color: #E48709;
+    width: 50%;
+    font-weight: 800;
+    font-size: 1.5vmax;
+    top: 7%;
+    left: 6%;
+}
+
+#tituloBioma{
+    display: flex;
+    margin-top: 0%;
+}
+
+#botaoAnterior{
+    display: flex;
+    position: absolute;
+    top: 90%;
+    left: 5%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+#botaoPosterior{
+    display: flex;
+    position: absolute;
+    top: 90%;
+    right: 5%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+button {
+    display: flex;
+    background-color: #E48709;
+    border: 0;
+    height: 7%;
+    border-radius: 0.7vmax;
+    align-items: center;
+    font-size: 0.7vmax;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.usuario{
+    display: none;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+}
+
+.usuarioCadastrado{
+    display: flex;
+    width: 100%;
+    margin-left:10%;
+    align-items: center;
+}
+
+#logoUsuario{
+    width: 20%;
+    height: 100%;
+    margin-left: 10%;
+}
+#irpagdelogin {
+    margin-left:20%;
+}
+
+#irpagdecadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E48709;
+    margin-left: 5%;
+    border-radius: 0.5vmax;
+    font-size: 1vmax;
+    height: 100%;
+    width: 45%;
+}

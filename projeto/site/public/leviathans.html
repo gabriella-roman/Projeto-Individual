@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subnautica | Leviathan</title>
+    <link rel="stylesheet" href="css/styleLeviathans.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
+    <script src="js/funcoes.js"></script>
+</head>
+<body onload = "validarSessao()">
+    <div class="banner">
+        <div class="header">
+            <div class="logo"> <img src="assets/imgs/Subnautica_Logo.webp" alt=""></div>
+            <div class="navbar">
+                <span onclick="ir_pagindex()" id="homeNavbar">HOME</span>
+                <span onclick="ir_paghistoria()" id="historiaNavbar">HISTÓRIA</span>
+                <span onclick="ir_paghabitat()" id="habitatNavbar">HABITAT</span>
+                <span id="leviathansNavbar">LEVIATHANS</span>
+                <div id="usuario" class="usuario">
+                    <span id="irpagdelogin" onclick="ir_paglogin()">ENTRAR</span>
+                    <span id="irpagdecadastro" onclick="ir_pagcadastro()">CADASTRE-SE</span>
+                </div>
+                <div id="usuarioCadastrado" class="usuarioCadastrado">
+                    <span id="irpagdelogin" onclick="sair()">SAIR</span>
+                    <img id="logoUsuario" src="assets/imgs/logoUsuario.png" alt="">
+                </div>
+            </div>
+    </div>
+    <div class="conteudoBanner">
+        <span id="teste">VOCÊ SABIA?</span>
+        <span id="tituloBanner">QUE OS LEVIATHANS</span>
+        <span id="textoBanner">São criaturas gigantes e assustadoras que habitam as profundezas do oceano. Representam uma das maiores fontes de desafio para os jogadores. Existem vários tipos de Leviatãs, cada um com sua própria aparência e comportamento único, incluindo o temido Reaper Leviathan e o misterioso Ghost Leviathan. Esses monstros representam obstáculos emocionantes para os jogadores que exploram o mundo de Subnautica.</span>
+    </div>
+</div>
+
+<!-- SEATRADER -->
+<div class="containerSeaTraderBranco">
+    <div id="menuSeaTreadera" class="menuSeaTreader">
+        <button id="botaoST" onclick="botaoVoltarSeaTrader()">VOLTAR</button>
+        <span id="tituloDataBankST">DATA BANK ENTRY</span>
+        <span id="textoDataBankST">Um vasto leviatã bípede que vaga pelos recifes em manadas, pastando no fundo do mar.<br><br>
+
+            1. Antenas: As antenas na cabeça da criatura podem detectar uma série de aromas, ajudando os pisadores do mar a encontrar pastagens frescas, evitar o caminho de grandes predadores e sentir sinais químicos de outros de sua espécie.<br><br>
+            
+            2. Carapaça: Armadura grossa protege a criatura do ataque de todos, exceto o maior dos carnívoros. Duas pernas se estendem pela parte traseira.<br><br>
+            
+            3. Focinho alongado: Usado para desviar material vegetal do fundo do mar e manter o equilíbrio.<br><br>
+            
+            4. Comportamento: Grandes rebanhos dizimariam a flora de uma única área, favorecendo assim o comportamento migratório do peregrino-do-mar. As famílias mantêm seus filhotes no centro do rebanho, e os pais atacam curiosos em busca de uma refeição fácil.<br><br>
+            
+            Avaliação: Rebanhos podem desenterrar depósitos minerais à medida que agitam a areia</span>
+    </div>
+    <span id="tituloSeaTreader">SEA TREADER</span>
+    <span id="textoSeaTreader">O Sea Treader Leviathan é uma fauna defensiva da classe leviatã. Ele pode ser encontrado vagando no Grande Recife, bem como no Caminho do Peregrino do Mar, formando pequenos rebanhos.
+    Pertencem a classes marinhas de animais muito úteis que quebram pedaços de solo marinho e transformam em xisto.</span>
+    <div onclick="menuDataBank()" class="dataBankSeaTrader"><span id="dataBankST"> DATA BANK</span></div>
+    <img id="fundoseatrader" src="./assets/imgs/fundoseatrader.jpg" alt="">
+    <img id="seatreader" src="./assets/imgs/Sea_Treader_Leviathan_Fauna.webp" alt="">
+</div>
+
+
+
+<!-- REEFBACK -->
+<div class="containerReefbackBranco">
+    <div id="menuReefbacka" class="menuReefback">
+        <button id="botaoRB" onclick="botaoVoltarReefback()">VOLTAR</button>
+        <span id="tituloDataBankRB">DATA BANK ENTRY</span>
+        <span id="textoDataBankRB">Esta vasta forma de vida tem mais de 30 metros de comprimento e foi designada classe leviatã. Felizmente, alimenta-se exclusivamente de formas de vida semelhantes a plâncton na água.<br><br>
+
+            1. Concha quitinosa: A maior parte da parte superior da forma de vida e parte de sua parte inferior é protegida por um exoesqueleto espesso e em camadas. Isso sugere um caminho evolutivo bastante diferente de outros organismos em 4546B, a maioria dos quais são vertebrados na natureza. A espécie de recife provavelmente foi capaz de crescer muito maior do que outros herbívoros porque qualquer coisa grande o suficiente para romper sua casca há muito tempo foi extinta.<br><br>
+            
+            2. Vagens enzimáticas: Semelhantes em aparência às glândulas de algas do gasópode, esses órgãos na parte inferior do recife servem a algum propósito desconhecido em seu sistema digestivo e são capazes de expelir pequenas quantidades de enzimas estomacais para as águas circundantes.<br><br>
+            
+            3. Microcosmo local: Uma série de diferentes espécies de cracas e plantas crescem na concha do recife, empurrando suas raízes em cicatrizes antigas na quitina e aproveitando sua mobilidade para evitar a predação. No entanto, os recifes serão frequentemente perseguidos pelos herbívoros mais rápidos e famintos e, portanto, esta espécie de leviatã é um microcosmo móvel digno de anos de estudo em si mesmo.<br><br>
+            
+            4. Ciclo de vida: A vida útil dos recifes provavelmente se estende por muitos séculos, caso eles sobrevivam ao seu ciclo de crescimento inicial. Nas primeiras décadas, seu tamanho menor os tornaria vulneráveis a leviatãs carnívoros. Sociável, visto viajando em pequenas cápsulas e se comunicando por um chamado ecoante, o comportamento é consistente com a senciência de baixo nível.<br><br>
+            
+            Avaliação: Abriga plantas, pequenos peixes e cracas ricas em metais</span>
+    </div>
+    <span id="tituloReefback">REEFBACK</span>
+    <span id="textoReefback">O Reefback Leviathan é uma espécie de fauna passiva da classe leviatã. É a segunda maior forma de vida passiva e se relaciona com o Sea Dragon Leviathan para a terceira maior criatura geral.Os recifes adultos podem suportar mini-ecossistemas nas costas. Estes ecossistemas incluem muitos tipos de flora e corais, juntamente com outra pequena fauna nadando nas proximidades dos gigantes gentis.</span>
+    <div onclick="menuDataBankRB()" class="dataBankReefback"><span id="dataBankRB"> DATA BANK</span></div>
+    <img id="fundoreefback" src="./assets/imgs/subnautica-deep-critica-startvideojuegos.jpg" alt="">
+    <img id="reefback" src="./assets/imgs/maxresdefault-PhotoRoom.png-PhotoRoom.png" alt="">
+</div>
+
+
+<!-- REAPER -->
+<div class="containerReaperBranco">
+    <div id="menuReapera" class="menuReaper">
+        <button id="botaoRP" onclick="botaoVoltarReaper()">VOLTAR</button>
+        <span id="tituloDataBankRP">DATA BANK ENTRY</span>
+        <span id="textoDataBankRP">As espécies da classe Leviatã são organismos vastos no topo de suas respectivas cadeias alimentares. Esta espécie é um caçador aerodinâmico, com sentidos altamente desenvolvidos.<br><br>
+
+            1. Mandíbulas poderosas:Este leviatã é capaz de prender a presa no lugar com quatro mandíbulas poderosas e atraí-la ao alcance de suas mandíbulas. A pressão simulada excede a resistência ao esmagamento da mariposa.<br><br>
+
+            2. Ecolocalização:O rugido profundo emitido pelo ceifador em intervalos regulares é efetivamente sonar - se você pode ouvi-lo, o ceifador pode vê-lo.<br><br>
+
+            3. Perfil:O espécime escaneado mediu 55m de comprimento. Observado circulando sua presa e atacando por trás. Esta criatura é quase toda musculosa. Muito pouco cérebro. Sem senso de moralidade. Apenas músculo, sinapses e dentes.<br><br>
+
+            Nota motivacional: Parabéns por chegar perto o suficiente para escanear e viver para ver os resultados!<br><br>
+
+            Avaliação: Ameaça extrema - Evite em todas as circunstâncias</span>
+    </div>
+    <span id="tituloReaper">REAPER</span>
+    <span id="textoReaper">O Leviatã Ceifador é uma espécie de fauna agressiva da classe do leviatã geralmente encontrada nadando em grandes áreas abertas, como a Crash Zone, Dunas e Montanhas. É a terceira maior criatura agressiva do jogo e a quinta maior no geral.</span>
+    <div onclick="menuDataBankRP()" class="dataBankReaper"><span id="dataBankRP"> DATA BANK</span></div>
+    <img id="fundoreaper" src="./assets/imgs/CrashZoneTrue.webp" alt="">
+    <img id="reaper" src="./assets/imgs/image_processing20220220-29970-gzys7b-PhotoRoom.png-PhotoRoom.png" alt="">
+</div>
+
+<!-- GHOST -->
+<div class="containerGhostBranco">
+    <div id="menuGhosta" class="menuGhost">
+        <button id="botaoG" onclick="botaoVoltarGhost()">VOLTAR</button>
+        <span id="tituloDataBankG">DATA BANK ENTRY</span>
+        <span id="textoDataBankG">Esta criatura está se aproximando do limite de tamanho para formas de vida orgânicas sustentáveis, e foi designada classe leviatã. Adultos da espécie foram encontrados exclusivamente nas bordas da cratera vulcânica que suporta a vida nesta parte do planeta, e reagem com extrema agressividade ao se aproximar. <br><br>
+
+            1. Cabeça de martelo: extensões cartilaginosas do crânio da criatura formam um martelo que protege o leviatã fantasma enquanto ele executa ataques devastadores de abalroamento.<br><br>
+            
+            2. Mandíbulas: Embora totalmente capazes de rasgar a carne de qualquer criatura ao alcance, todas as evidências indicam que leviatãs fantasmas maduros se alimentam de formas de vida microscópicas nas águas ao redor das bordas da zona habitada. Seus ataques cruéis a intrusos em seu domínio não são de natureza predatória, mas territoriais. Uma criatura tão vasta requer uma enorme extensão de água para satisfazer suas necessidades calóricas diárias.<br><br>
+            
+            3. Torso: Seu corpo interior musculoso é cercado por uma membrana externa translúcida, sugerindo adaptação para ambientes profundos e com pouca luz. Quando ameaçado, ele pode tensionar todo o seu corpo antes de atacar com incrível velocidade.<br><br>
+            
+            4. Ciclo de vida: Provável comportamento migratório. Este espécime provavelmente nasceu longe da área onde foi encontrado.<br><br>
+            
+            Avaliação: Ameaça extrema - Evite a borda da cratera</span>
+    </div>
+    <span id="tituloGhost">GHOST</span>
+    <span id="textoGhost">O Leviatã Fantasma é uma espécie de fauna da classe Leviatã e forma adulta dos Juvenis do Leviatã Fantasma. É a segunda maior criatura agressiva de Subnautica.
+        Três adultos do Leviatã Fantasma desovam no mapa (sem contar o número infinito encontrado na Borda da Cratera): dois no Grande Recife e um na Zona de Algas de Sangue do Norte.</span>
+        <div onclick="menuDataBankG()" class="dataBankGhost"><span id="dataBankG"> DATA BANK</span></div>
+    <img id="fundoghost" src="./assets/imgs/bloodkelptwo_3.jpg" alt="">
+    <img id="ghost" src="./assets/imgs/Ghost_Leviathan_Fauna.webp" alt="">
+</div>
+
+<!-- SEADRAGON -->
+<div class="containerSeaDragonBranco">
+    <div id="menuSeaDragona" class="menuSeaDragon">
+        <button id="botaoSD" onclick="botaoVoltarSeaDragon()">VOLTAR</button>
+        <span id="tituloDataBankSD">DATA BANK ENTRY</span>
+        <span id="textoDataBankSD">Um leviatã colossal com características reptilianas, visto perseguindo o coração da cratera vulcânica que sustenta a vida nesta área. O espécime escaneado media 112m de comprimento.<br><br>
+
+            1. Tecido à prova de calor: A análise do tecido revela que este espécime consiste em 1/3 de materiais inanimados, focados em torno da área do tórax. O consumo e a retenção de substâncias minerais podem explicar a capacidade da forma de vida de suportar temperaturas extremas. Parece até ser capaz de consumir materiais fundidos e expulsá-los de seus adversários.<br><br>
+            
+            2. Antebraços: Antebraços evolutivamente distintos são usados para fins de propulsão e ataque. A descoberta sugere divergência evolutiva de outras espécies do planeta há dezenas de milhões de anos. O dragão-do-mar é provavelmente uma das espécies mais antigas do planeta.<br><br>
+            
+            3. Comportamento: Como a maior espécie carnívora encontrada em 4546B, quase tudo é presa em potencial. Com poucos alvos substanciais nos sistemas de cavernas vulcânicas, o dragão marinho provavelmente se aventura em águas mais frias para caçar outros leviatãs menores, encurralando-os e forçando-os mais fundo, onde são fervidos vivos.
+            O tamanho dos dragões-marinhos e as restrições dos sistemas de cavernas que habitam sugerem que seus números populacionais são extremamente baixos, talvez na casa de um dígito. Embora não seja incomum que predadores maiores sustentem populações mais baixas, é possível que as fontes de alimento do dragão-marinho tenham diminuído ao longo do tempo. Esta espécie pode estar em vias de extinção.<br><br>
+            
+            Avaliação: Ameaça extrema - Evite em todas as circunstâncias.</span>
+    </div>
+    <span id="tituloSeaDragon">SEA DRAGON</span>
+    <span id="textoSeaDragon">O Leviatã do Dragão do Mar é uma espécie colossal da fauna da classe do leviatã. É a maior criatura agressiva de Subnautica. Há um total de três Leviatãs Dragão do Mar no mapa: dois na Zona de Lava Inativa e um nos Lagos de Lava.</span>
+    <div onclick="menuDataBankSD()" class="dataBankSeaDragon"><span id="dataBankSD"> DATA BANK</span></div>
+    <img id="fundoseadragon" src="./assets/imgs/ALZFalls.webp" alt="">
+    <img id="seadragon" src="./assets/imgs/ANGERY-PhotoRoom.png-PhotoRoom.png" alt="">
+</div>
+
+<!-- SEAEMPEROR -->
+<div class="containerSeaEmperorBranco">
+    <div id="menuSeaEmperora" class="menuSeaEmperor">
+        <button id="botaoSE" onclick="botaoVoltarSeaEmperor()">VOLTAR</button>
+        <span id="tituloDataBankSE">DATA BANK ENTRY</span>
+        <span id="textoDataBankSE">AS CATEGORIAS DE TAMANHO DOS ESPÉCIMES FORAM AJUSTADAS PARA CIMA PARA ACOMODAR ESTA ESPÉCIE<br><br>
+
+            1. Alimentação e digestão: Dados de pesquisas indicam que, apesar de seu tamanho, essa espécie se alimenta inteiramente de microrganismos que filtra da água, que dependem de um ecossistema complicado de vida vegetal e animal.<br><br>
+            
+            2. Reprodução: Grandes órgãos semelhantes a ovários são carregados na seção central da criatura, sugerindo que, como outras espécies neste planeta, ela produz ovos, no entanto, o tecido cicatricial interno indica provável infertilidade.<br><br>
+            
+            3. Enzima 42O imperador fabrica a enzima 42 dentro de sua cavidade estomacal para quebrar seus alimentos, e ocasionalmente os expele para as águas circundantes. Descobriu-se que essa substância neutraliza os efeitos da bactéria, e sua presença no ecossistema hoje explicaria como a vida no planeta sobreviveu ao surto. Resta explicar por qual mecanismo a enzima está sendo entregue.<br><br>
+            
+            4. Saúde: A análise comparativa de tamanho e taxas metabólicas indica que o espécime capturado pelos pesquisadores tinha aproximadamente 1.600 anos. Extenso tecido cicatricial interno e externo sugere que ele tenha vivido bem além do pico de vida de sua espécie.<br><br>
+            
+            Avaliação: Embora um espécime de imperador saudável possa ter tido algum potencial como cura, é improvável que algum sujeito de pesquisa tenha sobrevivido aos procedimentos de quarentena.</span>
+    </div>
+    <span id="tituloSeaEmperor">SEA EMPEROR</span>
+    <span id="textoSeaEmperor">O Leviatã Imperador do Mar é a maior fauna viva da classe Leviatã encontrada dentro da cratera em Subnautica. É sapiente e telepático, mas ao contrário da maioria dos Leviatãs, não é agressivo.</span>
+    <div onclick="menuDataBankSE()" class="dataBankSeaEmperor"><span id="dataBankSE"> DATA BANK</span></div>
+    <img id="fundoseaemperor" src="./assets/imgs/add1ea7bbe9cc0fd515d4c5675d3af65.jpg" alt="">
+    <img id="seaemperor" src="./assets/imgs/seaemperor.png" alt="">
+    
+</div>
+
+</body>
+</html>
+
+<script>
+    
+    menuSeaTreadera.style.display = "none"
+    function botaoVoltarSeaTrader() {
+        const menuSeaTreadera = document.getElementById("menuSeaTreadera")
+        
+        if(menuSeaTreadera.style.display == "none"){
+            menuSeaTreadera.style.display = "flex"
+        } else {
+            menuSeaTreadera.style.display = "none"
+        }
+        
+    }
+
+    function menuDataBank() {
+        botaoVoltarSeaTrader() 
+    }
+
+    menuReefbacka.style.display = "none"
+    function botaoVoltarReefback() {
+        const menuReefbacka = document.getElementById("menuReefbacka")
+        
+        if(menuReefbacka.style.display == "none"){
+            menuReefbacka.style.display = "flex"
+        } else {
+            menuReefbacka.style.display = "none"
+        }
+        
+    }
+
+    function menuDataBankRB() {
+        botaoVoltarReefback() 
+    }
+
+    menuReapera.style.display = "none"
+    function botaoVoltarReaper() {
+        const menuReapera = document.getElementById("menuReapera")
+        
+        if(menuReapera.style.display == "none"){
+            menuReapera.style.display = "flex"
+        } else {
+            menuReapera.style.display = "none"
+        }
+        
+    }
+
+    function menuDataBankRP() {
+        botaoVoltarReaper() 
+    }
+
+    menuGhosta.style.display = "none"
+    function botaoVoltarGhost() {
+        const menuGhosta = document.getElementById("menuGhosta")
+        
+        if(menuGhosta.style.display == "none"){
+            menuGhosta.style.display = "flex"
+        } else {
+            menuGhosta.style.display = "none"
+        }
+        
+    }
+
+    function menuDataBankG() {
+        botaoVoltarGhost() 
+    }
+
+    menuSeaDragona.style.display = "none"
+    function botaoVoltarSeaDragon() {
+        const menuSeaDragona = document.getElementById("menuSeaDragona")
+        
+        if(menuSeaDragona.style.display == "none"){
+            menuSeaDragona.style.display = "flex"
+        } else {
+            menuSeaDragona.style.display = "none"
+        }
+        
+    }
+
+    function menuDataBankSD() {
+        botaoVoltarSeaDragon() 
+    }
+
+    menuSeaEmperora.style.display = "none"
+    function botaoVoltarSeaEmperor() {
+        const menuSeaEmperora = document.getElementById("menuSeaEmperora")
+        
+        if(menuSeaEmperora.style.display == "none"){
+            menuSeaEmperora.style.display = "flex"
+        } else {
+            menuSeaEmperora.style.display = "none"
+        }
+        
+    }
+
+    function menuDataBankSE() {
+        botaoVoltarSeaEmperor() 
+    }
+
+    // navegação de site
+    function ir_pagindex(){
+        window.location.href = "index.html";
+    }
+    function ir_paghistoria(){
+        window.location.href = "historia.html";
+    }
+    function ir_pagleviathan(){
+        window.location.href = "leviathans.html";
+    } 
+    function ir_paghabitat(){
+        window.location.href = "habitat.html";
+    }
+
+    const usuario = document.getElementById("usuario")
+    const usuarioCadastrado = document.getElementById("usuarioCadastrado")
+    function sair(){
+        sessionStorage.clear()
+        
+        if (usuario.style.display == "none") {
+            usuario.style.display = "flex"
+            usuarioCadastrado.style.display = "none"
+        }
+    }
+</script>

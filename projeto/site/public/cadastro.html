@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> subnautica | Cadastro </title>
+
+
+    <script src="./js/funcoes.js"></script>
+
+
+    <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
+    <link rel="stylesheet" href="./css/styleCadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner">
+        <div class="conteudoCadastro">
+            <div class="cadastre-se">Cadastre-se!</div>
+            <div class="inputsParaCadastro">
+                Nome:
+                <input type="text" id="nome_input">
+                Email:
+                <input type="text" id="email_input">
+                Senha:
+                <input type="password" id="senha_input">
+                Confirmar Senha:
+                <input type="password" id="confirmacao_senha_input">
+                <div class="botao"><button id="buttonCadastrar" onclick="cadastrar()">Cadastre-se</button></div>
+            </div>
+            <div class="baixo">JÁ TEM CONTA? FAÇA O <span onclick="irpaglogin()" id="palavraLogin">LOGIN</span> !</div>
+        </div>
+    </div>
+    <div id="div_erros_login"></div>
+    <div id="cardErro"></div>
+    <span id="mensagem_erro"></span>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+    function irpaglogin(){
+        window.location.href = "login.html";
+    } 
+  
+</script>
