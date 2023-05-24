@@ -9,3 +9,12 @@ CREATE TABLE usuario (
 	senha VARCHAR(45)
 );
 
+CREATE TABLE pontuacao (
+	idPontuação INT PRIMARY KEY AUTO_INCREMENT,
+	pontuacao INT,
+	fkUsuario INT,
+	constraint fkUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
+);
+
+INSERT INTO pontuacao VALUES 
+(null, "pontuacao", "ID_USUARIO")
