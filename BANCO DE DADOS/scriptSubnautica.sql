@@ -1,9 +1,18 @@
 create database subnautica;
 use subnautica;
 
-create table usuario (
-idUsuario int primary key auto_increment,
-nome varchar(45),
-email varchar(45),
-senha varchar(45)
+CREATE TABLE usuario (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(45),
+	email VARCHAR(45),
+	senha VARCHAR(45)
 );
+
+CREATE TABLE pontuacao (
+	idPontuação INT PRIMARY KEY AUTO_INCREMENT,
+	pontuacao INT,
+	fkUsuario INT,
+	constraint fkUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
+);
+
+select * from pontuacao;

@@ -15,6 +15,3 @@ CREATE TABLE pontuacao (
 	fkUsuario INT,
 	constraint fkUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
-
-INSERT INTO pontuacao VALUES 
-(null, "pontuacao", "ID_USUARIO")

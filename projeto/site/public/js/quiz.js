@@ -186,6 +186,7 @@ function voltarHome() {
 
 /* FUNÇÃO PARA ATUALIZAR AS PERGUNTAS AO CLICAR NO BOTÃO*/
 function proximaPergunta() {
+    var pontuacaoTeste = 0
     if (contador != 1 && contador2 != 1 && contador3 != 1 && contador4 != 1) {
         alert("Selecione uma alternativa!")
     } else {
@@ -193,6 +194,7 @@ function proximaPergunta() {
             pontuacao++
             if (posicaoPergunta == 0) {
                 totalPerguntas[0].pontos++
+                pontuacaoTeste += 
             } else if (posicaoPergunta == 1) {
                 totalPerguntas[1].pontos++
             } else if (posicaoPergunta == 2) {
@@ -246,7 +248,7 @@ function inserirPontuacao() {
     
 
     // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
+    fetch("/usuarios/inserirPontuacao", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -254,7 +256,7 @@ function inserirPontuacao() {
         body: JSON.stringify({
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
-            pontuacaoServer: pontuacao,
+            pontosServer: pontos,
             ID_USUARIOServer: sessionStorage.ID_USUARIO
         })
     }).then(function (resposta) {

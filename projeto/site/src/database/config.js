@@ -21,8 +21,8 @@ var sql = require('mssql');
 var mySqlConfig = {
     host: "localhost",
     database: "subnautica",
-    user: "root",
-    password: "gabilu09",
+    user: "aluno",
+    password: "sptech",
 };
 
 function executar(instrucao) {

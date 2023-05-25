@@ -108,7 +108,7 @@ function inserirPontuacao(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.inserirPontuacao(pontuacao, ID_USUARIO)
+        usuarioModel.inserirPontuacao(pontos, ID_USUARIO)
             .then(
                 function (resultado) {
                     res.json(resultado);
