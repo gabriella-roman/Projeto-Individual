@@ -104,14 +104,14 @@ function selecionarOpcao1() {
         mudarCor1.style.backgroundColor = "#E48709"
         contador--
     }
-    if (posicaoPergunta == 0 || posicaoPergunta == 3 ) {
-        if(contador == 1){
+    if (posicaoPergunta == 0 || posicaoPergunta == 3) {
+        if (contador == 1) {
             respostaCerta = true
         }
     } else {
-            respostaCerta = false
-    } 
+        respostaCerta = false
     }
+}
 
 
 function selecionarOpcao2() {
@@ -147,12 +147,12 @@ function selecionarOpcao3() {
     }
 
     if (posicaoPergunta == 1) {
-        if(contador3 == 1){
+        if (contador3 == 1) {
             respostaCerta = true
         }
     } else {
-            respostaCerta = false
-    } 
+        respostaCerta = false
+    }
 }
 
 function selecionarOpcao4() {
@@ -169,13 +169,13 @@ function selecionarOpcao4() {
         mudarCor4.style.backgroundColor = "#E48709"
         contador4--
     }
-    if (posicaoPergunta == 2 || posicaoPergunta == 4 ) {
-        if(contador4 == 1){
+    if (posicaoPergunta == 2 || posicaoPergunta == 4) {
+        if (contador4 == 1) {
             respostaCerta = true
         }
     } else {
-            respostaCerta = false
-    } 
+        respostaCerta = false
+    }
 }
 
 /* VOLTAR PARA PÁGINA INICIAL*/
@@ -194,15 +194,19 @@ function proximaPergunta() {
             pontuacao++
             if (posicaoPergunta == 0) {
                 totalPerguntas[0].pontos++
-                pontuacaoTeste += 
+                pontosPergunta1++
             } else if (posicaoPergunta == 1) {
                 totalPerguntas[1].pontos++
+                pontosPergunta2++
             } else if (posicaoPergunta == 2) {
                 totalPerguntas[2].pontos++
+                pontosPergunta3++
             } else if (posicaoPergunta == 3) {
                 totalPerguntas[3].pontos++
+                pontosPergunta4++
             } else if (posicaoPergunta == 4) {
                 totalPerguntas[4].pontos++
+                pontosPergunta5++
             }
         }
         respostaCerta = false
@@ -230,33 +234,32 @@ function proximaPergunta() {
 
 
             if (graficoDeRespostas.style.display == "none") {
+                setTimeout(inserirPontuacao, 500)
                 graficoDeRespostas.style.display = "flex"
             } else {
                 graficoDeRespostas.style.display = "none"
             }
         }
     }
-    
+
     vezesQueAcertou.innerHTML = `${pontuacao}`
-    inserirPontuacao()
+
 }
 
+
+
 function inserirPontuacao() {
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    
-
-    // Enviando o valor da nova input
     fetch("/usuarios/inserirPontuacao", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            pontosServer: pontos,
+            pontos1Server: pergunta1.pontos,
+            pontos2Server: pergunta2.pontos,
+            pontos3Server: pergunta3.pontos,
+            pontos4Server: pergunta4.pontos,
+            pontos5Server: pergunta5.pontos,
             ID_USUARIOServer: sessionStorage.ID_USUARIO
         })
     }).then(function (resposta) {
@@ -264,9 +267,10 @@ function inserirPontuacao() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-            mensagem_erro.innerHTML = "Pontuação inserida com sucesso!";
+            alert("Pontuação inserida com sucesso!");
+            setTimeout(exibirDados, 500)
         } else {
-            throw ("Houve um erro ao salvar pontuação!");
+            throw ("Houve um erro ao tentar realizar o cadastro!");
         }
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
@@ -274,3 +278,49 @@ function inserirPontuacao() {
 
     return false;
 }
+
+
+
+
+function exibirDados() {
+
+   // Vetor para receber o JSON do banco
+
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/exibirDados", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                dado[0] = json[0].Pergunta1
+                dado[1] = json[0].Pergunta2
+                dado[2] = json[0].Pergunta3
+                dado[3] = json[0].Pergunta4
+                dado[4] = json[0].Pergunta5
+                grafico_1.update()
+            })
+        } else {
+            throw ("Houve um erro ao salvar pontuação!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    }); 
+
+    return false;
+}
+
+
+
+
+

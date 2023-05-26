@@ -96,19 +96,23 @@ function cadastrar(req, res) {
 
 function inserirPontuacao(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var pontuacao = req.body.pontuacaoServer;
+    var pontuacao1 = req.body.pontos1Server;
+    var pontuacao2 = req.body.pontos2Server;
+    var pontuacao3 = req.body.pontos3Server;
+    var pontuacao4 = req.body.pontos4Server;
+    var pontuacao5 = req.body.pontos5Server;
     var ID_USUARIO = req.body.ID_USUARIOServer;
 
 
     // Faça as validações dos valores
-    if (pontuacao == undefined) {
+    if (pontuacao1 == undefined || pontuacao2 == undefined || pontuacao3 == undefined  || pontuacao4 == undefined  || pontuacao5 == undefined) {
         res.status(400).send("Sua pontuação está undefined!");
     } else if (ID_USUARIO == undefined) {
         res.status(400).send("Quem é você?");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.inserirPontuacao(pontos, ID_USUARIO)
+        usuarioModel.inserirPontuacao(pontuacao1, pontuacao2, pontuacao3, pontuacao4, pontuacao5, ID_USUARIO)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -126,11 +130,25 @@ function inserirPontuacao(req, res) {
     }
 }
 
+function exibirDados(req, res) {
+    usuarioModel.exibirDados()
+        .then(function (resultado) {
+                console.log(resultado[0].Pergunta1)
+                res.json(resultado)
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
 
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar,
-    inserirPontuacao
+    testar, 
+    inserirPontuacao,
+    exibirDados
 }

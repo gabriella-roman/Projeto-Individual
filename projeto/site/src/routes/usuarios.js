@@ -24,4 +24,8 @@ router.post("/inserirPontuacao", function (req, res) {
     usuarioController.inserirPontuacao(req, res);
 });
 
+router.post("/exibirDados", function (req, res) {
+    usuarioController.exibirDados(req, res);
+});
+
 module.exports = router;
