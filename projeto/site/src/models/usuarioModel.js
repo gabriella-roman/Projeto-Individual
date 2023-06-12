@@ -60,17 +60,40 @@ function inserirPontuacao(pontuacao1, pontuacao2, pontuacao3, pontuacao4, pontua
     return database.executar(instrucao);
 }
 
-function postar(nome, comentario, idUsuario) {
-    console.log("ACESSEI O POSTAR MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, comentario, idUsuario);
+function postar(comentario, idUsuario) {
+    console.log("ACESSEI O POSTAR MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", comentario, idUsuario);
     
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
+    
     var instrucao = `
-        INSERT INTO comentarios (nome, comentario, fkUsuario) VALUES ('${nome}', '${comentario}','${idUsuario}');
+        INSERT INTO comentarios (comentario, fkUsuario) VALUES ('${comentario}','${idUsuario}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+
+function posts() {
+    var instrucao = `
+    SELECT 
+    nome, comentario, fkUsuario as idUsuario
+FROM
+    comentarios
+        JOIN
+    usuario ON comentarios.fkUsuario = usuario.id
+    ORDER BY idPostagem DESC;
+    `
+
+    return database.executar(instrucao);
+}
+
+function qtdPostagens(usuario) {
+   
+     var instrucao = `
+     SELECT count(fkUsuario) from comentarios where fkUsuario = '${usuario}';
+     `;
+
+     console.log("Executando a instrução SQL: \n" + instrucao);
+     return database.executar(instrucao);
+ }
 
 module.exports = {
     entrar,
@@ -78,5 +101,7 @@ module.exports = {
     listar,
     inserirPontuacao,
     exibirDados,
-    postar
+    postar,
+    posts,
+    qtdPostagens
 };

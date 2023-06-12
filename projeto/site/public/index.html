@@ -141,13 +141,36 @@
         }
     }
 
-    function abrirMenu(){
+    
+
+    function abrirMenu() {
+        var usuarioVar = sessionStorage.getItem("ID_USUARIO");
         nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
-        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
+        
         if (menu.style.display == "none") {
             menu.style.display = "flex"
         } else {
             menu.style.display = "none"
         }
-    }
+
+        console.log(usuarioVar);
+
+        fetch(`/usuarios/qtdComentarios/${usuarioVar}`).then(function (resposta) {
+
+
+          if (resposta.ok) {
+            
+
+            resposta.json().then((json) => {
+              
+                comentariosUsuario.innerHTML = resposta     
+              
+          
+              
+
+              
+            });
+          }
+        });
+      }
 </script>

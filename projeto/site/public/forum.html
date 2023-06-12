@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/styleGlobal.css">
     <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
 </head>
-<body>
+<body onload="posts()">
     <div class="banner">
         <div id="menuFlutuante" class="menuFlutuantePerfil">
             <div class="conteudoMenu">
@@ -42,11 +42,9 @@
             <button onclick="postar()" id="botaoComentar">COMENTAR</button>
         </div>
     
-        <div class="blocoDeComentarios">
+        <div class="blocoDeComentarios" id="div_bloco_coment">
             <div class="cardComentario">
-                <div class="criador"><span id="criadorPost">Criador</span></div>
-                <div class="comentario">Rapazeada, estou com dificuldades de encontrar o reaper? onde seria?</div>
-                <div></div>
+                
             </div>
         </div>
     </div>
@@ -72,15 +70,12 @@
             post.style.display = "flex"
         }
 
-        var nomeVar = sessionStorage.NOME_USUARIO;
+        
         var comentarioVar = inputComentario.value;
         var idUsuarioVar = sessionStorage.ID_USUARIO;
 
 
-        if (nomeVar == "" || comentarioVar == "") {
-            alert("Campo nulo! Escreva algo para postar :)")
-            return false;
-        }
+       
 
         // Enviando o valor da nova input
         fetch("/usuarios/postar", {
@@ -89,17 +84,17 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
+                
                 comentarioServer: comentarioVar,
                 idUsuarioServer: idUsuarioVar
+
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
+                posts()
                 alert("Postagem feita com sucesso!")
             } else {
                 throw ("Houve um erro ao tentar realizar a postagem!");
@@ -110,6 +105,36 @@
 
         return false;
     }
+
+    var postagens = [];
+    var usuarioPost = "";
+    var comentarioPost = "";
+
+    function posts() {
+        fetch("/usuarios/posts", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then(async function (resposta) {
+          postagens = await resposta.json();
+          div_bloco_coment.innerHTML = "";
+            for (var posicao = 0; posicao < postagens.length; posicao++) {
+              var postAtual = postagens[posicao];
+              usuarioPost = postAtual.nome
+              comentarioPost = postAtual.comentario
+              
+              div_bloco_coment.innerHTML += `
+              <div class="cardComentario">
+                <div class="criador"><span id="criadorPost">${usuarioPost}</span></div>
+                <div class="comentario">${comentarioPost}</div>
+              </div>
+              `
+              
+            
+          }
+        });
+      }
 
     
 </script>

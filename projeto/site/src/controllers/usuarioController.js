@@ -145,14 +145,12 @@ function exibirDados(req, res) {
 }
 
 function postar(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
+
     var comentario = req.body.comentarioServer;
     var idUsuario = req.body.idUsuarioServer;
 
-    // Faça as validações dos valores
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.postar(nome, comentario, idUsuario)
+
+        usuarioModel.postar(comentario, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -169,6 +167,50 @@ function postar(req, res) {
             );
     }
 
+    
+
+function posts(req, res) {
+    usuarioModel.posts()
+        .then(function (resultado) {
+            
+            res.status(200).json(resultado);
+        })
+        .catch(function (erro) {
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
+function qtdPostagens(req, res) {
+    var usuario = req.params.idUsuario;
+
+    if (usuario == undefined) {
+        res.status(400).send("Logue primeiro");
+    } else {
+        usuarioModel.qtdPostagens(usuario)
+            .then(function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                if (resultado.length >= 1) {
+                    console.log(resultado);
+                    res.json(resultado);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("Você não tem postagens");
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao buscar suas postagens! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
+}
+
+
+
 module.exports = {
     entrar,
     cadastrar,
@@ -176,5 +218,7 @@ module.exports = {
     testar, 
     inserirPontuacao,
     exibirDados,
-    postar
+    postar,
+    posts,
+    qtdPostagens
 }

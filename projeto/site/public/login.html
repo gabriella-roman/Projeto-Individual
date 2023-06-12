@@ -53,7 +53,7 @@
 
         if (emailVar == "" || senhaVar == "") {
             erro.innerHTML = "Campos vazios";
-            finalizarAguardar();
+
             return false;
         }
         else {
@@ -98,7 +98,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+
                 });
             }
 
