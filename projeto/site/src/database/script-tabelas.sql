@@ -19,5 +19,12 @@ CREATE TABLE pontuacao (
 	constraint fkUsuario FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
 
+CREATE TABLE comentarios (
+	idPostagem INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(45),
+	comentario LONGTEXT,
+	fkUsuario INT,
+	constraint fkUsuarioPostagem FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
+);
 
 select * from usuario;

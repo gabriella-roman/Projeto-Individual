@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subnautica | Página Fórum</title>
+    <link rel="stylesheet" href="css/styleForum.css">
+    <link rel="stylesheet" href="css/styleGlobal.css">
+    <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
+</head>
+<body>
+    <div class="banner">
+        <div id="menuFlutuante" class="menuFlutuantePerfil">
+            <div class="conteudoMenu">
+                <div>Olá, <span id="nomeUsuario"></span>!</div>
+                <div>Pontuação: <span id="pontuacaoUsuario"></span></div>
+                <div>Comentários no Fórum: <span id="comentariosUsuario"></span></div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="logo"> <img src="assets/imgs/Subnautica_Logo.webp" alt=""></div>
+            <div class="navbar">
+                <span id="homeNavbar">HOME</span>
+                <span id="irpagdehistoria" onclick="ir_paghistoria()">HISTÓRIA</span>
+                <span id="irpagdehabitat" onclick="ir_paghabitat()">HABITAT</span>
+                <span id="irpagdeleviathans" onclick="ir_pagleviathan()">LEVIATHANS</span>
+                <div id="usuario" class="usuario">
+                    <span id="irpagdelogin" onclick="ir_paglogin()">ENTRAR</span>
+                    <span id="irpagdecadastro" onclick="ir_pagcadastro()">CADASTRE-SE</span>
+                </div>
+                <div id="usuarioCadastrado" class="usuarioCadastrado">
+                    <span id="irpagdelogin" onclick="sair()">SAIR</span>
+                    <img onclick="abrirMenu()" id="logoUsuario" src="assets/imgs/logoUsuario.png" alt="">
+                </div>
+            </div>
+        </div>
+        <button onclick="abrirMenuComentario()" id="botaoAdicionar">ADICIONAR COMENTÁRIO</button>
+        <div id="post" class="post">
+            <div id="digite"> Digite seu comentário! </div>
+            <input id="inputComentario" type="text">
+            <button onclick="postar()" id="botaoComentar">COMENTAR</button>
+        </div>
+    
+        <div class="blocoDeComentarios">
+            <div class="cardComentario">
+                <div class="criador"><span id="criadorPost">Criador</span></div>
+                <div class="comentario">Rapazeada, estou com dificuldades de encontrar o reaper? onde seria?</div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const post = document.getElementById("post")
+
+    function abrirMenuComentario() {
+
+        if(post.style.display == "none"){
+            post.style.display = "flex"
+        } else {
+            post.style.display = "none"
+        }
+    }
+
+    function postar(){
+        if(post.style.display == "flex"){
+            post.style.display = "none"
+        } else {
+            post.style.display = "flex"
+        }
+
+        var nomeVar = sessionStorage.NOME_USUARIO;
+        var comentarioVar = inputComentario.value;
+        var idUsuarioVar = sessionStorage.ID_USUARIO;
+
+
+        if (nomeVar == "" || comentarioVar == "") {
+            alert("Campo nulo! Escreva algo para postar :)")
+            return false;
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/postar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                comentarioServer: comentarioVar,
+                idUsuarioServer: idUsuarioVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert("Postagem feita com sucesso!")
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+    
+</script>

@@ -11,6 +11,9 @@ router.get("/listar", function (req, res) {
     usuarioController.listar(req, res);
 });
 
+router.get("/mostrarComentarios", function (req, res) {
+    usuarioController.mostrarComentarios(req, res);
+});
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
@@ -27,5 +30,9 @@ router.post("/inserirPontuacao", function (req, res) {
 router.post("/exibirDados", function (req, res) {
     usuarioController.exibirDados(req, res);
 });
+
+router.post("/postar", function (req, res) {
+    usuarioController.postar(req, res);
+})
 
 module.exports = router;

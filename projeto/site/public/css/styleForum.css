@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Work Sans', sans-serif;
+    background-color: #030D23;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 6%;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    height: 60%;
+    width: 20%;
+    margin-left: 5%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 70%;
+    gap: 10%;
+    color: white;
+    font-size: 1vmax;
+    cursor: pointer;
+    margin-left: 10%;
+    font-weight: 600;
+}
+
+.usuario{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+}
+
+.usuarioCadastrado{
+    display: none;
+    width: 100%;
+    margin-left:10%;
+    align-items: center;
+}
+
+#logoUsuario{
+    width: 20%;
+    height: 100%;
+    margin-left: 10%;
+}
+
+#irpagdelogin {
+    margin-left:20%;
+}
+
+#irpagdecadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E48709;
+    margin-left: 5%;
+    border-radius: 0.5vmax;
+    font-size: 1vmax;
+    height: 100%;
+    width: 45%;
+}
+
+.blocoDeComentarios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.cardComentario{
+    display: flex;
+    background-color: #030D23;
+    border: 1px  #E48709 solid;
+    height: 30%;
+    width: 80%;
+    margin-top: 2%;
+    color: white;
+    flex-direction: column;
+    font-size: 1vmax;
+}
+
+.criador{
+    height: 15%;
+    width: 100%;
+    font-size: 1.5vmax;
+    color: #E48709;
+    font-weight: 700; 
+    margin-left: 2%;
+}
+
+.comentario{
+    display: flex;
+    height: 69%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.responder{
+    display: flex;
+    height: 15%;
+    width: 10%;
+    margin-left: 2%;
+    align-items: center;
+    justify-content: center;
+    background-color: #E48709;
+    border-radius: 1vmax;
+    font-weight: 800;
+    color: #030D23;
+    border: 0;
+    font-size: 0.8vmax;
+    cursor: pointer;
+}
+#botaoAdicionar{
+    background-color: #E48709;
+    border: 0;
+    height: 6%;
+    border-radius: 1vmax;
+    color: #030D23;
+    font-weight: 900;
+    width: 17%;
+    margin-left: 75%;
+    margin-top: 2%;
+    font-size: 1vmax;
+    cursor: pointer;
+}
+
+.post{
+    display: none;
+    position: absolute;
+    z-index: 5;
+    background-color: #E48709;
+    width: 50%;
+    height: 60%;
+    left: 25%;
+    border-radius: 2vmax;
+    flex-direction: column;
+    align-items: center;
+}
+
+#digite{
+    width: 95%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 5%;
+    color: #030D23;
+    font-weight: 800;
+    font-size: 1.5vmax;
+}
+#inputComentario{
+    background-color: #E48709;
+    border: 0.2vmax #030D23 solid;
+    width: 80%;
+    height: 60%;
+    margin-top: 5%;
+}
+
+#botaoComentar{
+    background-color: #030D23;
+    border: 0;
+    color: white;
+    border-radius: 1vmax;
+    width: 30%;
+    height: 10%;
+    font-weight: 900;
+    font-size: 1.5vmax;
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+#responder{
+    display: none;
+}

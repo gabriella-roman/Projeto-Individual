@@ -144,11 +144,37 @@ function exibirDados(req, res) {
         );
 }
 
+function postar(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var nome = req.body.nomeServer;
+    var comentario = req.body.comentarioServer;
+    var idUsuario = req.body.idUsuarioServer;
+
+    // Faça as validações dos valores
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.postar(nome, comentario, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a postagem! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar, 
     inserirPontuacao,
-    exibirDados
+    exibirDados,
+    postar
 }

@@ -11,9 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
     <script src="js/funcoes.js"></script>
+    <link rel="stylesheet" href="css/styleGlobal.css">
 </head>
 <body onload = "validarSessao()">
     <div class="banner">
+        <div id="menuFlutuante" class="menuFlutuantePerfil">
+            <div class="conteudoMenu">
+                <div>Olá, <span id="nomeUsuario"></span>!</div>
+                <div>Pontuação: <span id="pontuacaoUsuario"></span></div>
+                <div>Comentários no Fórum: <span id="comentariosUsuario"></span></div>
+            </div>
+        </div>
         <div class="header">
             <div class="logo"> <img src="assets/imgs/Subnautica_Logo.webp" alt=""></div>
             <div class="navbar">
@@ -27,7 +35,7 @@
                 </div>
                 <div id="usuarioCadastrado" class="usuarioCadastrado">
                     <span id="irpagdelogin" onclick="sair()">SAIR</span>
-                    <img id="logoUsuario" src="assets/imgs/logoUsuario.png" alt="">
+                    <img onclick="abrirMenu()" id="logoUsuario" src="assets/imgs/logoUsuario.png" alt="">
                 </div>
             </div>
     </div>
@@ -301,6 +309,12 @@
     function ir_paghabitat(){
         window.location.href = "habitat.html";
     }
+    function ir_paglogin() {
+        window.location.href = "login.html";
+    }
+    function ir_pagcadastro() {
+        window.location.href = "cadastro.html";
+    }
 
     const usuario = document.getElementById("usuario")
     const usuarioCadastrado = document.getElementById("usuarioCadastrado")
@@ -310,6 +324,21 @@
         if (usuario.style.display == "none") {
             usuario.style.display = "flex"
             usuarioCadastrado.style.display = "none"
+        }
+    }
+
+    const menu = document.getElementById("menuFlutuante")
+    const nomeUsuario = document.getElementById("nomeUsuario")
+    const pontuacaoUsuario = document.getElementById("pontuacaoUsuario")
+    const comentariosUsuario = document.getElementById("comentariosUsuario")
+
+    function abrirMenu(){
+        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
+        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
+        if (menu.style.display == "none") {
+            menu.style.display = "flex"
+        } else {
+            menu.style.display = "none"
         }
     }
 </script>

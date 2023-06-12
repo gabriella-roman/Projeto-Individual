@@ -270,7 +270,7 @@ function inserirPontuacao() {
             alert("Pontuação inserida com sucesso!");
             setTimeout(exibirDados, 500)
         } else {
-            throw ("Houve um erro ao tentar realizar o cadastro!");
+            throw ("Houve um erro ao tentar inserir a pontuação!");
         }
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);

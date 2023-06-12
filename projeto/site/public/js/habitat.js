@@ -7,6 +7,27 @@ function ir_paghistoria(){
 function ir_pagleviathan(){
     window.location.href = "leviathans.html";
 }
+function ir_paglogin() {
+    window.location.href = "login.html";
+}
+function ir_pagcadastro() {
+    window.location.href = "cadastro.html";
+}
+
+    const menu = document.getElementById("menuFlutuante")
+    const nomeUsuario = document.getElementById("nomeUsuario")
+    const pontuacaoUsuario = document.getElementById("pontuacaoUsuario")
+    const comentariosUsuario = document.getElementById("comentariosUsuario")
+
+function abrirMenu(){
+    nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
+    nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
+    if (menu.style.display == "none") {
+        menu.style.display = "flex"
+    } else {
+        menu.style.display = "none"
+    }
+}
 
 // testando carrosel
 const proximo = document.getElementById("botaoPosterior")

@@ -1,4 +1,4 @@
-   /* GRAFICOOOOOOOOOOOOOOOOo */
+   /* GRAFICO */
    var dado = [] 
 
    const labels = [

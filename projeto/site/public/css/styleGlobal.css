@@ -1,0 +1,21 @@
+.menuFlutuantePerfil{
+    background-color: #E48709;
+    position: absolute;
+    display: none;
+    height: 20%;
+    width: 20%;
+    left: 78%;
+    top: 6%;
+    border-radius: 3vmax;
+    z-index: 7;
+}
+
+.conteudoMenu{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: 5%;
+    gap:15%;
+    color: #030D23;
+    font-weight: 500;
+}

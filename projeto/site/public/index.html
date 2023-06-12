@@ -8,9 +8,18 @@
     <link rel="stylesheet" href="css/styleHome.css">
     <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
     <script src="js/funcoes.js"></script>
+    <script src="js/quiz.js"></script>
+    <link rel="stylesheet" href="css/styleGlobal.css">
 </head>
 <body onload = "validarSessao()">
     <div class="banner">
+        <div id="menuFlutuante" class="menuFlutuantePerfil">
+            <div class="conteudoMenu">
+                <div>Olá, <span id="nomeUsuario"></span>!</div>
+                <div>Pontuação: <span id="pontuacaoUsuario"></span></div>
+                <div>Comentários no Fórum: <span id="comentariosUsuario"></span></div>
+            </div>
+        </div>
         <div class="header">
             <div class="logo"> <img src="assets/imgs/Subnautica_Logo.webp" alt=""></div>
             <div class="navbar">
@@ -24,7 +33,7 @@
                 </div>
                 <div id="usuarioCadastrado" class="usuarioCadastrado">
                     <span id="irpagdelogin" onclick="sair()">SAIR</span>
-                    <img id="logoUsuario" src="assets/imgs/logoUsuario.png" alt="">
+                    <img onclick="abrirMenu()" id="logoUsuario" src="assets/imgs/logoUsuario.png" alt="">
                 </div>
             </div>
             
@@ -92,7 +101,11 @@
 <script>
     const usuario = document.getElementById("usuario")
     const usuarioCadastrado = document.getElementById("usuarioCadastrado")
-    
+    const menu = document.getElementById("menuFlutuante")
+    const nomeUsuario = document.getElementById("nomeUsuario")
+    const pontuacaoUsuario = document.getElementById("pontuacaoUsuario")
+    const comentariosUsuario = document.getElementById("comentariosUsuario")
+
     function ir_paghabitat(){
         window.location.href = "habitat.html";
     }
@@ -105,9 +118,10 @@
 
     function começarOQuiz(){
         if(sessionStorage.EMAIL_USUARIO == undefined){
-            alert("Cadastre-se primeiro!!")
+            alert("Para começar o quiz, faça o login!")
         } else {
             window.location.href = "quiz.html";
+            
         }
     }
 
@@ -124,6 +138,16 @@
         if (usuario.style.display == "none") {
             usuario.style.display = "flex"
             usuarioCadastrado.style.display = "none"
+        }
+    }
+
+    function abrirMenu(){
+        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
+        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
+        if (menu.style.display == "none") {
+            menu.style.display = "flex"
+        } else {
+            menu.style.display = "none"
         }
     }
 </script>
