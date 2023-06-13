@@ -44,4 +44,8 @@ router.post("/postar", function (req, res) {
     usuarioController.postar(req, res);
 })
 
+router.delete("/delete/:idPost", function (req, res) {
+    usuarioController.deletePost(req, res);
+})
+
 module.exports = router;

@@ -21,4 +21,20 @@ function abrirMenu() {
         });
       }
     });
+
+    
+  }
+
+  var totalPosts = 0
+  function totalPost(){
+    fetch(`/usuarios/totalPostagens`).then(function (resposta) {
+
+
+      if (resposta.ok) {
+        console.log(resposta.json)
+        resposta.json().then((json) => {
+         totalPosts = json[0].totalComentarios
+        });
+      }
+    });
   }

@@ -220,6 +220,37 @@ function começarOQuiz(req, res) {
         });
 }
 
+function deletePost(req, res) {
+    var idPost = Number(req.params.idPost)
+    usuarioModel.deletePost(idPost)
+        .then(
+                console.log("Deu certo!")).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function totalPost(req, res) {
+    
+        usuarioModel.totalPost()
+            .then(function (resultado) {
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); 
+
+                if (resultado.length >= 1) {
+                    console.log(resultado);
+                    res.json(resultado);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("Não há postagens");
+                }
+            })
+}
+
+
+
+
 module.exports = {
     entrar,
     cadastrar,
@@ -230,5 +261,7 @@ module.exports = {
     postar,
     posts,
     qtdPostagens,
-    começarOQuiz
+    começarOQuiz,
+    deletePost,
+    totalPost
 }

@@ -99,6 +99,16 @@ function qtdPostagens(usuario) {
      return database.executar(instrucao);
  }
 
+ function totalPost() {
+   
+    var instrucao = `
+    SELECT count(idPostagem) as totalComentarios from comentarios;
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
  function começarOQuiz(idUsuario) {
     var instrucao = `
@@ -107,6 +117,16 @@ function qtdPostagens(usuario) {
 
     return database.executar(instrucao);
 }
+
+function deletePost(idPost) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function delete()");
+    var instrucao = `
+        DELETE FROM comentarios WHERE idPostagem = ${idPost};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
@@ -116,5 +136,7 @@ module.exports = {
     postar,
     posts,
     qtdPostagens,
-    começarOQuiz
+    começarOQuiz,
+    deletePost,
+    totalPost
 };
