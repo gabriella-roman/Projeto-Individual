@@ -78,7 +78,7 @@ function postar(comentario, idUsuario) {
 function posts() {
     var instrucao = `
     SELECT 
-    nome, comentario, fkUsuario as idUsuario
+    nome, comentario, fkUsuario as idUsuario, idPostagem
 FROM
     comentarios
         JOIN

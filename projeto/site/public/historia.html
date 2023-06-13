@@ -26,6 +26,7 @@
                 <span id="historiaNavbar" onclick="ir_paghistoria()">HISTÓRIA</span>
                 <span id="habitatNavbar" onclick="ir_paghabitat()">HABITAT</span>
                 <span id="irpagdeleviathans" onclick="ir_pagleviathan()">LEVIATHANS</span>
+                <span id="irpagdeforum" onclick="ir_pagforum()">FÓRUM</span>
                 <div id="usuario" class="usuario">
                     <span id="irpagdelogin" onclick="ir_paglogin()">ENTRAR</span>
                     <span id="irpagdecadastro" onclick="ir_pagcadastro()">CADASTRE-SE</span>
@@ -94,6 +95,9 @@
         window.location.href = "cadastro.html";
     }
 
+    function ir_pagforum() {
+        window.location.href = "forum.html";
+    }
     const usuario = document.getElementById("usuario")
     const usuarioCadastrado = document.getElementById("usuarioCadastrado")
     function sair(){

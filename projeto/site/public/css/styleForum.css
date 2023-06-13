@@ -5,9 +5,10 @@
 body {
     margin: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     font-family: 'Work Sans', sans-serif;
     background-color: #030D23;
+    background-image: linear-gradient(360deg, black 0%, #010c69 100%);
 }
 
 .banner {
@@ -87,17 +88,30 @@ body {
 }
 .cardComentario{
     display: flex;
-    background-color: #030D23;
+    background-color: hsl(221, 84%, 12%);
     border: 1px  #E48709 solid;
-    height: 100px;
+    height: 100%;
     width: 80%;
     margin-top: 2%;
     color: white;
     flex-direction: column;
     font-size: 1vmax;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.315);
 }
 
-.criador{
+.cardComentario svg{
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+}
+
+.cardComentario svg:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+.criador{    
     height: 15%;
     width: 100%;
     font-size: 1.5vmax;
@@ -109,10 +123,11 @@ body {
 .comentario{
     display: flex;
     height: 69%;
-    width: 100%;
-    align-items: center;
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 5%;    align-items: center;
     justify-content: center;
-    
+    overflow-x: hidden;
 }
 
 .responder{
@@ -192,3 +207,4 @@ body {
 #responder{
     display: none;
 }
+

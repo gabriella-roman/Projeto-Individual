@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="css/styleForum.css">
     <link rel="stylesheet" href="css/styleGlobal.css">
     <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
+    <link rel="stylesheet" href="css/styleGlobal.css">
+    <script src="js/funcoes.js"></script>
+    <script src="js/menu.js"></script>
 </head>
-<body onload="posts()">
+<body onload="validarSessao()">
     <div class="banner">
         <div id="menuFlutuante" class="menuFlutuantePerfil">
             <div class="conteudoMenu">
@@ -21,10 +24,11 @@
         <div class="header">
             <div class="logo"> <img src="assets/imgs/Subnautica_Logo.webp" alt=""></div>
             <div class="navbar">
-                <span id="homeNavbar">HOME</span>
+                <span id="homeNavbar" onclick="ir_pagindex()">HOME</span>
                 <span id="irpagdehistoria" onclick="ir_paghistoria()">HISTÓRIA</span>
                 <span id="irpagdehabitat" onclick="ir_paghabitat()">HABITAT</span>
                 <span id="irpagdeleviathans" onclick="ir_pagleviathan()">LEVIATHANS</span>
+                <span id="irpagdeforum" onclick="ir_pagforum()">FÓRUM</span>
                 <div id="usuario" class="usuario">
                     <span id="irpagdelogin" onclick="ir_paglogin()">ENTRAR</span>
                     <span id="irpagdecadastro" onclick="ir_pagcadastro()">CADASTRE-SE</span>
@@ -38,7 +42,7 @@
         <button onclick="abrirMenuComentario()" id="botaoAdicionar">ADICIONAR COMENTÁRIO</button>
         <div id="post" class="post">
             <div id="digite"> Digite seu comentário! </div>
-            <textarea id="inputComentario" type="text"></textarea>
+            <textarea id="inputComentario" type="text"  cols='60' rows='8'></textarea>
             <button onclick="postar()" id="botaoComentar">COMENTAR</button>
         </div>
     
@@ -52,12 +56,37 @@
 </html>
 
 <script>
+
+function ir_pagindex(){
+        window.location.href = "index.html";
+    }
+    function ir_paghistoria(){
+        window.location.href = "historia.html";
+    }
+    function ir_pagleviathan(){
+        window.location.href = "leviathans.html";
+    } 
+    function ir_paghabitat(){
+        window.location.href = "habitat.html";
+    }
+    function ir_paglogin() {
+        window.location.href = "login.html";
+    }
+    function ir_pagcadastro() {
+        window.location.href = "cadastro.html";
+    }
+
+    posts()
+
+
     const post = document.getElementById("post")
+
 
     function abrirMenuComentario() {
 
         if(post.style.display == "none"){
             post.style.display = "flex"
+            
         } else {
             post.style.display = "none"
         }
@@ -109,6 +138,7 @@
     var postagens = [];
     var usuarioPost = "";
     var comentarioPost = "";
+    var idUsuario = sessionStorage.getItem("ID_USUARIO");
 
     function posts() {
         fetch("/usuarios/posts", {
@@ -123,18 +153,53 @@
               var postAtual = postagens[posicao];
               usuarioPost = postAtual.nome
               comentarioPost = postAtual.comentario
-              
-              div_bloco_coment.innerHTML += `
+              idPost = postAtual.idPostagem
+              if (postAtual.idUsuario == idUsuario) {
+                div_bloco_coment.innerHTML += `
+              <div class="cardComentario">
+                <div class="criador"><span id="criadorPost">${usuarioPost} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" onclick="deletar_post()" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+</svg></span></div>
+                <div class="comentario">${comentarioPost}</div>
+              </div>
+              `   
+              } else {
+                div_bloco_coment.innerHTML += `
               <div class="cardComentario">
                 <div class="criador"><span id="criadorPost">${usuarioPost}</span></div>
                 <div class="comentario">${comentarioPost}</div>
               </div>
               `
+              }
+              
               
             
           }
         });
       }
 
-    
+      const usuario = document.getElementById("usuario")
+    const usuarioCadastrado = document.getElementById("usuarioCadastrado")
+    function sair(){
+        sessionStorage.clear()
+        
+        if (usuario.style.display == "none") {
+            usuario.style.display = "flex"
+            usuarioCadastrado.style.display = "none"
+        }
+    }
+    const menu = document.getElementById("menuFlutuante")
+    const nomeUsuario = document.getElementById("nomeUsuario")
+    const pontuacaoUsuario = document.getElementById("pontuacaoUsuario")
+    const comentariosUsuario = document.getElementById("comentariosUsuario")
+
+    function abrirMenu(){
+        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
+        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
+        if (menu.style.display == "none") {
+            menu.style.display = "flex"
+        } else {
+            menu.style.display = "none"
+        }
+    }
 </script>

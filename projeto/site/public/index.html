@@ -10,6 +10,7 @@
     <script src="js/funcoes.js"></script>
     <script src="js/quiz.js"></script>
     <link rel="stylesheet" href="css/styleGlobal.css">
+    <script src="js/menu.js"></script>
 </head>
 <body onload = "validarSessao()">
     <div class="banner">
@@ -27,6 +28,7 @@
                 <span id="irpagdehistoria" onclick="ir_paghistoria()">HISTÓRIA</span>
                 <span id="irpagdehabitat" onclick="ir_paghabitat()">HABITAT</span>
                 <span id="irpagdeleviathans" onclick="ir_pagleviathan()">LEVIATHANS</span>
+                <span id="irpagdeforum" onclick="ir_pagforum()">FÓRUM</span>
                 <div id="usuario" class="usuario">
                     <span id="irpagdelogin" onclick="ir_paglogin()">ENTRAR</span>
                     <span id="irpagdecadastro" onclick="ir_pagcadastro()">CADASTRE-SE</span>
@@ -128,6 +130,11 @@
     function ir_paglogin() {
         window.location.href = "login.html";
     }
+
+    function ir_pagforum() {
+        window.location.href = "forum.html";
+    }
+
     function ir_pagcadastro() {
         window.location.href = "cadastro.html";
     }
@@ -141,28 +148,5 @@
         }
     }
 
-    function abrirMenu() {
-        var usuarioVar = sessionStorage.getItem("ID_USUARIO");
-        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
-        
-        if (menu.style.display == "none") {
-            menu.style.display = "flex"
-        } else {
-            menu.style.display = "none"
-        }
-
-        console.log(usuarioVar);
-
-        fetch(`/usuarios/qtdPostagens/${usuarioVar}`).then(function (resposta) {
-
-
-          if (resposta.ok) {
-            console.log(resposta.json)
-            resposta.json().then((json) => {
-                const comentariosUsuario = document.getElementById("comentariosUsuario")
-                comentariosUsuario.innerHTML = json[0].qtdComentarios
-            });
-          }
-        });
-      }
+    
 </script>

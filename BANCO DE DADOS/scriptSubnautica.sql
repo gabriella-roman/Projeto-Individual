@@ -48,7 +48,12 @@ select
 (select count(pontuacao4) from pontuacao where pontuacao4 = 1) as Pergunta4,
 (select count(pontuacao5) from pontuacao where pontuacao5 = 1) as Pergunta5;
 
-SELECT count(fkUsuario) as qtdComentarios from comentarios where fkUsuario = 1;
+SELECT * from comentarios;
+
+
+select * from usuario;
+
+delete from comentarios where idPostagem = 3;
 
 insert into comentarios values 
 (null, 'aaa', 2),

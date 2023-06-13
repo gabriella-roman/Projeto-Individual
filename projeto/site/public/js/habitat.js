@@ -14,6 +14,10 @@ function ir_pagcadastro() {
     window.location.href = "cadastro.html";
 }
 
+function ir_pagforum() {
+    window.location.href = "forum.html";
+}
+
     const menu = document.getElementById("menuFlutuante")
     const nomeUsuario = document.getElementById("nomeUsuario")
     const pontuacaoUsuario = document.getElementById("pontuacaoUsuario")
