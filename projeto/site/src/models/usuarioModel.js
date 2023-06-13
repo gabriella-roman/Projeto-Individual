@@ -56,6 +56,10 @@ function inserirPontuacao(pontuacao1, pontuacao2, pontuacao3, pontuacao4, pontua
     var instrucao = `
         INSERT INTO pontuacao (pontuacao1, pontuacao2, pontuacao3, pontuacao4, pontuacao5, fkUsuario) VALUES (${pontuacao1}, ${pontuacao2}, ${pontuacao3} , ${pontuacao4}, ${pontuacao5}, ${ID_USUARIO});
     `;
+
+    var instrucao = `
+        INSERT INTO quiz (fkUsuario) VALUES (${ID_USUARIO});
+    `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
@@ -88,13 +92,21 @@ FROM
 function qtdPostagens(usuario) {
    
      var instrucao = `
-     SELECT count(fkUsuario) from comentarios where fkUsuario = '${usuario}';
+     SELECT count(fkUsuario) as qtdComentarios from comentarios where fkUsuario = '${usuario}';
      `;
 
      console.log("Executando a instrução SQL: \n" + instrucao);
      return database.executar(instrucao);
  }
 
+
+ function começarOQuiz(idUsuario) {
+    var instrucao = `
+    SELECT * FROM quiz WHERE fkUsuario = ${idUsuario};
+    `
+
+    return database.executar(instrucao);
+}
 module.exports = {
     entrar,
     cadastrar,
@@ -103,5 +115,6 @@ module.exports = {
     exibirDados,
     postar,
     posts,
-    qtdPostagens
+    qtdPostagens,
+    começarOQuiz
 };

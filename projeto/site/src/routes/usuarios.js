@@ -15,8 +15,12 @@ router.get("/posts", function (req, res) {
     usuarioController.posts(req, res);
 });
 
-router.get("/:idUsuario", function (req, res) {
+router.get("/qtdPostagens/:idUsuario", function (req, res) {
     usuarioController.qtdPostagens(req, res);
+});
+
+router.get("/começarOQuiz:idUsuario", function (req, res) {
+    usuarioController.começarOQuiz(req, res);
 });
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js

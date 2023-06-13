@@ -141,8 +141,6 @@
         }
     }
 
-    
-
     function abrirMenu() {
         var usuarioVar = sessionStorage.getItem("ID_USUARIO");
         nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
@@ -155,20 +153,14 @@
 
         console.log(usuarioVar);
 
-        fetch(`/usuarios/qtdComentarios/${usuarioVar}`).then(function (resposta) {
+        fetch(`/usuarios/qtdPostagens/${usuarioVar}`).then(function (resposta) {
 
 
           if (resposta.ok) {
-            
-
+            console.log(resposta.json)
             resposta.json().then((json) => {
-              
-                comentariosUsuario.innerHTML = resposta     
-              
-          
-              
-
-              
+                const comentariosUsuario = document.getElementById("comentariosUsuario")
+                comentariosUsuario.innerHTML = json[0].qtdComentarios
             });
           }
         });

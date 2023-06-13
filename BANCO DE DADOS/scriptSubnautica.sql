@@ -1,6 +1,5 @@
 create database subnautica;
 use subnautica;
-
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(45)  NOT NULL,
@@ -26,7 +25,6 @@ CREATE TABLE comentarios (
 	constraint fkUsuarioPostagem FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
 
-
 select * from usuario;
 select * from pontuacao;
 select fkUsuario from pontuacao where fkUsuario = 1;
@@ -50,7 +48,7 @@ select
 (select count(pontuacao4) from pontuacao where pontuacao4 = 1) as Pergunta4,
 (select count(pontuacao5) from pontuacao where pontuacao5 = 1) as Pergunta5;
 
-SELECT count(fkUsuario) from comentarios where fkUsuario = '2';
+SELECT count(fkUsuario) as qtdComentarios from comentarios where fkUsuario = 1;
 
 insert into comentarios values 
 (null, 'aaa', 2),

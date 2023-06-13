@@ -209,7 +209,16 @@ function qtdPostagens(req, res) {
     }
 }
 
-
+function começarOQuiz(req, res) {
+    usuarioModel.começarOQuiz()
+        .then(function (resultado) {
+            
+            res.status(200).json(resultado);
+        })
+        .catch(function (erro) {
+            res.status(500).json(erro.sqlMessage);
+        });
+}
 
 module.exports = {
     entrar,
@@ -220,5 +229,6 @@ module.exports = {
     exibirDados,
     postar,
     posts,
-    qtdPostagens
+    qtdPostagens,
+    começarOQuiz
 }

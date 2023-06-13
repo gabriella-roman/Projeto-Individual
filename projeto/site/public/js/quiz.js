@@ -280,18 +280,9 @@ function inserirPontuacao() {
 }
 
 
-
-
 function exibirDados() {
 
-   // Vetor para receber o JSON do banco
 
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-
-
-    // Enviando o valor da nova input
     fetch("/usuarios/exibirDados", {
         method: "POST",
         headers: {
@@ -320,6 +311,35 @@ function exibirDados() {
     return false;
 }
 
+
+function começarOQuiz(){
+    var jaRespondeu = ""
+    if(sessionStorage.EMAIL_USUARIO == undefined){
+        alert("Para começar o quiz, faça o login!")
+    } else {
+        window.location.href = "quiz.html";
+        
+    }
+
+
+    fetch("/usuarios/começarOQuiz", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then(async function (resposta) {
+        jaRespondeu = await resposta.json();
+        if(jaRespondeu.length != 0) {
+            alert("Você já respondeu o quiz, será redirecionado a sua pontuação!")
+            graficoDeRespostas.style.display = 'flex'
+        } else {
+            graficoDeRespostas.style.display = 'none'
+        }
+      });
+
+      
+    
+}
 
 
 

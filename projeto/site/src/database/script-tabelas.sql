@@ -27,4 +27,9 @@ CREATE TABLE comentarios (
 	constraint fkUsuarioPostagem FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
 
+CREATE TABLE quiz (
+fkUsuario INT,
+	constraint fkUsuarioQuiz FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
+);
+
 select * from usuario;
