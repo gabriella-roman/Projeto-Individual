@@ -70,23 +70,6 @@ var totalPerguntas = [
 
 var posicaoPergunta = 0
 
-/* INICIO DO QUIZ 
-*/
-function começar() {
-    var email = input_email_usuario.value;
-    var temArroba = email.indexOf("@")
-    var validacaoArroba = temArroba >= 0
-    var validacaoFimDoEmail = (email.endsWith("sptech.school") || email.endsWith(".com") || email.endsWith(".com.br"))
-    /*var validacaoSeEmailExisteNoBD = */
-
-    if (quiz.style.display == "none" && validacaoFimDoEmail && validacaoFimDoEmail) {
-        quiz.style.display = "flex"
-    } else {
-        quiz.style.display = "none"
-        spanErro.innerHTML = `Email inválido, verifique antes de continuar!`
-    }
-}
-
 /* MUDANDO COR PARA QUANDO SELECIONAR*/
 /* SISTEMA DE PONTUAÇÃO */
 function selecionarOpcao1() {
@@ -279,7 +262,7 @@ function inserirPontuacao() {
     return false;
 }
 
-
+let pontosQuiz = 0
 function exibirDados() {
 
 
@@ -299,6 +282,7 @@ function exibirDados() {
                 dado[2] = json[0].Pergunta3
                 dado[3] = json[0].Pergunta4
                 dado[4] = json[0].Pergunta5
+
                 grafico_1.update()
             })
         } else {
@@ -312,35 +296,51 @@ function exibirDados() {
 }
 
 
-function começarOQuiz(){
-    var jaRespondeu = ""
+function comecarOQuiz(){
     if(sessionStorage.EMAIL_USUARIO == undefined){
         alert("Para começar o quiz, faça o login!")
+        window.location = "login.html"
     } else {
-        window.location.href = "quiz.html";
-        
-    }
-
-
-    fetch("/usuarios/começarOQuiz", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then(async function (resposta) {
-        jaRespondeu = await resposta.json();
-        if(jaRespondeu.length != 0) {
-            alert("Você já respondeu o quiz, será redirecionado a sua pontuação!")
-            graficoDeRespostas.style.display = 'flex'
-        } else {
-            graficoDeRespostas.style.display = 'none'
-        }
-      });
-
-      
-    
+        fetch("/usuarios/comecarOQuiz", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                ID_USUARIOServer: sessionStorage.ID_USUARIO
+            })
+          }) .then(function (resposta) {
+            resposta.json().then (json => {
+                console.log(json)
+                if(json.length != 0) {
+                    alert("Você já respondeu o quiz, será redirecionado a sua pontuação!")
+                    graficoDeRespostas.style.display = 'flex'
+                    pontosQuiz = json[0].pontuacao1 + json[0].pontuacao2 + json[0].pontuacao3 + json[0].pontuacao4 + json[0].pontuacao5
+                } else {
+                    graficoDeRespostas.style.display = 'none'
+                }
+                exibirDados()
+                vezesQueAcertou.innerHTML = `${pontosQuiz}`
+            })
+          });
+    } 
 }
 
-
-
-
+fetch("/usuarios/comecarOQuiz", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+        ID_USUARIOServer: sessionStorage.ID_USUARIO
+    })
+  }) .then(function (resposta) {
+    resposta.json().then (json => {
+        if(json.length != 0) {
+            
+            pontosQuiz = json[0].pontuacao1 + json[0].pontuacao2 + json[0].pontuacao3 + json[0].pontuacao4 + json[0].pontuacao5
+        } else {
+            
+        }
+    })
+  });

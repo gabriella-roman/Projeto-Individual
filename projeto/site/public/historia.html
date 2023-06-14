@@ -74,6 +74,7 @@
 </body>
 </html>
 
+<script src="js/menu.js"></script>
 <script>
     function ir_pagindex(){
         window.location.href = "index.html";
@@ -97,29 +98,5 @@
 
     function ir_pagforum() {
         window.location.href = "forum.html";
-    }
-    const usuario = document.getElementById("usuario")
-    const usuarioCadastrado = document.getElementById("usuarioCadastrado")
-    function sair(){
-        sessionStorage.clear()
-        
-        if (usuario.style.display == "none") {
-            usuario.style.display = "flex"
-            usuarioCadastrado.style.display = "none"
-        }
-    }
-    const menu = document.getElementById("menuFlutuante")
-    const nomeUsuario = document.getElementById("nomeUsuario")
-    const pontuacaoUsuario = document.getElementById("pontuacaoUsuario")
-    const comentariosUsuario = document.getElementById("comentariosUsuario")
-
-    function abrirMenu(){
-        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
-        nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
-        if (menu.style.display == "none") {
-            menu.style.display = "flex"
-        } else {
-            menu.style.display = "none"
-        }
     }
 </script>

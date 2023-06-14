@@ -18,20 +18,6 @@ function ir_pagforum() {
     window.location.href = "forum.html";
 }
 
-    const menu = document.getElementById("menuFlutuante")
-    const nomeUsuario = document.getElementById("nomeUsuario")
-    const pontuacaoUsuario = document.getElementById("pontuacaoUsuario")
-    const comentariosUsuario = document.getElementById("comentariosUsuario")
-
-function abrirMenu(){
-    nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
-    nomeUsuario.innerHTML= `${sessionStorage.NOME_USUARIO}`
-    if (menu.style.display == "none") {
-        menu.style.display = "flex"
-    } else {
-        menu.style.display = "none"
-    }
-}
 
 // testando carrosel
 const proximo = document.getElementById("botaoPosterior")
@@ -186,15 +172,3 @@ function anterior() {
         posicaoSlide = 10
     }
 }
-
-    const usuario = document.getElementById("usuario")
-    const usuarioCadastrado = document.getElementById("usuarioCadastrado")
-    function sair(){
-        sessionStorage.clear()
-        
-        if (usuario.style.display == "none") {
-            usuario.style.display = "flex"
-            usuarioCadastrado.style.display = "none"
-        }
-
-    }

@@ -26,6 +26,7 @@ CREATE TABLE comentarios (
 );
 
 select * from usuario;
+SELECT * FROM pontuacao WHERE fkUsuario = 2;
 select * from pontuacao;
 select fkUsuario from pontuacao where fkUsuario = 1;
 select count(pontuacao1), count(pontuacao2), count(pontuacao3), count(pontuacao4), count(pontuacao5) from pontuacao;

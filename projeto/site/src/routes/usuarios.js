@@ -19,8 +19,8 @@ router.get("/qtdPostagens/:idUsuario", function (req, res) {
     usuarioController.qtdPostagens(req, res);
 });
 
-router.get("/começarOQuiz:idUsuario", function (req, res) {
-    usuarioController.começarOQuiz(req, res);
+router.post("/comecarOQuiz", function (req, res) {
+    usuarioController.comecarOQuiz(req, res);
 });
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js

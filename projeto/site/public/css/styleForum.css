@@ -104,8 +104,8 @@ body {
     position: absolute;
     z-index: 5;
     background-color: #E48709;
-    width: 50%;
-    height: 60%;
+    width: 40%;
+    height: 40%;
     left: 25%;
     border-radius: 2vmax;
     flex-direction: column;
@@ -127,7 +127,7 @@ body {
     background-color: #E48709;
     border: 0.2vmax #030D23 solid;
     width: 80%;
-    height: 60%;
+    height: 40%;
     margin-top: 5%;
 }
 

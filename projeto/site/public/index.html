@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="css/styleHome.css">
     <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
     <script src="js/funcoes.js"></script>
-    <script src="js/quiz.js"></script>
     <link rel="stylesheet" href="css/styleGlobal.css">
-    <script src="js/menu.js"></script>
 </head>
 <body onload = "validarSessao()">
     <div class="banner">
@@ -90,7 +88,7 @@
         <div class="containerInternoQuiz">
             <div class="tituloQuiz"><span>Teste seu conhecimento!</span></div>
             <span id="textoQuiz">Responda o quiz e veja quantas perguntas você acerta!!</span>
-            <div class="botaoStart"><button id="botaoStart" onclick="começarOQuiz()">COMEÇAR</button></div>
+            <div class="botaoStart"><button id="botaoStart" onclick="irQuiz()">COMEÇAR</button></div>
         </div>
     </div>
 
@@ -100,14 +98,10 @@
 </body>
 </html>
 
+<script src="js/menu.js"></script>
+<script src="js/quiz.js"></script>
 <script>
-    const usuario = document.getElementById("usuario")
-    const usuarioCadastrado = document.getElementById("usuarioCadastrado")
-    const menu = document.getElementById("menuFlutuante")
-    const nomeUsuario = document.getElementById("nomeUsuario")
-    const pontuacaoUsuario = document.getElementById("pontuacaoUsuario")
-    const comentariosUsuario = document.getElementById("comentariosUsuario")
-
+   
     function ir_paghabitat(){
         window.location.href = "habitat.html";
     }
@@ -118,17 +112,15 @@
         window.location.href = "leviathans.html";
     }
 
-    function começarOQuiz(){
-        if(sessionStorage.EMAIL_USUARIO == undefined){
-            alert("Para começar o quiz, faça o login!")
-        } else {
-            window.location.href = "quiz.html";
-            
-        }
-    }
-
     function ir_paglogin() {
         window.location.href = "login.html";
+    }
+
+    function irQuiz() {
+        if(sessionStorage.EMAIL_USUARIO == undefined){
+        alert("Para começar o quiz, faça o login!")
+        window.location = "login.html"
+    }
     }
 
     function ir_pagforum() {
@@ -139,14 +131,6 @@
         window.location.href = "cadastro.html";
     }
 
-    function sair(){
-        sessionStorage.clear()
-        
-        if (usuario.style.display == "none") {
-            usuario.style.display = "flex"
-            usuarioCadastrado.style.display = "none"
-        }
-    }
-
     
+
 </script>

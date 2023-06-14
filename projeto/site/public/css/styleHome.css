@@ -251,21 +251,7 @@ body {
     margin-top: 3%;
 }
 
-#irpagdelogin {
-    margin-left:20%;
-}
 
-#irpagdecadastro{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #E48709;
-    margin-left: 5%;
-    border-radius: 0.5vmax;
-    font-size: 1vmax;
-    height: 100%;
-    width: 45%;
-}
 
 
 

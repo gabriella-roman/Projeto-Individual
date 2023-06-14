@@ -209,10 +209,11 @@ function qtdPostagens(req, res) {
     }
 }
 
-function começarOQuiz(req, res) {
-    usuarioModel.começarOQuiz()
+function comecarOQuiz(req, res) {
+    console.log("logController")
+    var id = req.body.ID_USUARIOServer;
+    usuarioModel.comecarOQuiz(id)
         .then(function (resultado) {
-            
             res.status(200).json(resultado);
         })
         .catch(function (erro) {
@@ -261,7 +262,7 @@ module.exports = {
     postar,
     posts,
     qtdPostagens,
-    começarOQuiz,
+    comecarOQuiz,
     deletePost,
     totalPost
 }
