@@ -211,11 +211,7 @@ function proximaPergunta() {
             opcao4.innerHTML = totalPerguntas[posicaoPergunta].opcao4
         }
 
-        if (posicaoPergunta == 4) {
-            mudarFraseBotao.innerHTML = `Finalizar Questionário`
-            proxPergunta.style.backgroundColor = "blue";
-
-
+        if (posicaoPergunta == 5) {
             if (graficoDeRespostas.style.display == "none") {
                 setTimeout(inserirPontuacao, 500)
                 graficoDeRespostas.style.display = "flex"
@@ -223,6 +219,14 @@ function proximaPergunta() {
                 graficoDeRespostas.style.display = "none"
             }
         }
+        
+        if (posicaoPergunta == 4) {
+            mudarFraseBotao.innerHTML = `Finalizar Questionário`
+            proxPergunta.style.backgroundColor = "blue";
+            posicaoPergunta++
+        }
+
+        
     }
 
     vezesQueAcertou.innerHTML = `${pontuacao}`

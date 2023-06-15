@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link rel="icon" href="assets/imgs/Ghost_Leviathan_Fauna.webp">
     <link rel="stylesheet" href="css/styleGlobal.css">
 </head>
+
 <body onload="validarSessao()">
     <div class="banner">
         <div id="menuFlutuante" class="menuFlutuantePerfil">
@@ -38,35 +40,37 @@
                 </div>
             </div>
         </div>
+        <div class="analyticUsuario"><span id="porcentagemUsuario"></span></div>
         <button onclick="abrirMenuComentario()" id="botaoAdicionar">ADICIONAR COMENTÁRIO</button>
         <div id="post" class="post">
             <div id="digite"> Digite seu comentário! </div>
-            <textarea id="inputComentario" type="text"  cols='60' rows='8'></textarea>
+            <textarea id="inputComentario" type="text" cols='60' rows='8'></textarea>
             <button onclick="postar()" id="botaoComentar">COMENTAR</button>
         </div>
-    
+
         <div class="blocoDeComentarios" id="div_bloco_coment">
             <div class="cardComentario">
-                
+
             </div>
         </div>
     </div>
 </body>
+
 </html>
 
 <script src="js/menu.js"></script>
 <script>
 
-function ir_pagindex(){
+    function ir_pagindex() {
         window.location.href = "index.html";
     }
-    function ir_paghistoria(){
+    function ir_paghistoria() {
         window.location.href = "historia.html";
     }
-    function ir_pagleviathan(){
+    function ir_pagleviathan() {
         window.location.href = "leviathans.html";
-    } 
-    function ir_paghabitat(){
+    }
+    function ir_paghabitat() {
         window.location.href = "habitat.html";
     }
     function ir_paglogin() {
@@ -80,30 +84,31 @@ function ir_pagindex(){
 
 
     const post = document.getElementById("post")
+    const porcentagemUsuario = document.getElementById("porcentagemUsuario")
 
 
     function abrirMenuComentario() {
 
-        if(sessionStorage.EMAIL_USUARIO == undefined){
+        if (sessionStorage.EMAIL_USUARIO == undefined) {
             alert("Para fazer comentários, faça o login!")
         } else {
-            if(post.style.display == "none"){
-            post.style.display = "flex"
-            
-        } else {
-            post.style.display = "none"
-        }
+            if (post.style.display == "none") {
+                post.style.display = "flex"
+
+            } else {
+                post.style.display = "none"
+            }
         }
     }
 
-    function postar(){
-        if(post.style.display == "flex"){
+    function postar() {
+        if (post.style.display == "flex") {
             post.style.display = "none"
         } else {
             post.style.display = "flex"
         }
 
-        
+
         var comentarioVar = inputComentario.value;
         var idUsuarioVar = sessionStorage.ID_USUARIO;
 
@@ -115,7 +120,7 @@ function ir_pagindex(){
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                
+
                 comentarioServer: comentarioVar,
                 idUsuarioServer: idUsuarioVar
 
@@ -145,20 +150,20 @@ function ir_pagindex(){
 
     function posts() {
         fetch("/usuarios/posts", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
         }).then(async function (resposta) {
-          postagens = await resposta.json();
-          div_bloco_coment.innerHTML = "";
+            postagens = await resposta.json();
+            div_bloco_coment.innerHTML = "";
             for (var posicao = 0; posicao < postagens.length; posicao++) {
-              var postAtual = postagens[posicao];
-              usuarioPost = postAtual.nome
-              comentarioPost = postAtual.comentario
-              idPost = postAtual.idPostagem
-              if (postAtual.idUsuario == idUsuario) {
-                div_bloco_coment.innerHTML += `
+                var postAtual = postagens[posicao];
+                usuarioPost = postAtual.nome
+                comentarioPost = postAtual.comentario
+                idPost = postAtual.idPostagem
+                if (postAtual.idUsuario == idUsuario) {
+                    div_bloco_coment.innerHTML += `
               <div class="cardComentario">
                 <div class="criador"><span id="criadorPost">${usuarioPost} <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" onclick="deletar_post(${idPost})" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                 <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
@@ -166,24 +171,55 @@ function ir_pagindex(){
                 <div class="comentario">${comentarioPost}</div>
               </div>
               `
-              } else {
-                div_bloco_coment.innerHTML += `
+                } else {
+                    div_bloco_coment.innerHTML += `
               <div class="cardComentario">
                 <div class="criador"><span id="criadorPost">${usuarioPost}</span></div>
                 <div class="comentario">${comentarioPost}</div>
               </div>
               `
-              }
-          }
+                }
+            }
         });
-      }
+
+        var usuarioVar = sessionStorage.getItem("ID_USUARIO");
+        fetch(`/usuarios/qtdPostagens/${usuarioVar}`).then(function (resposta) {
+
+
+            if (resposta.ok) {
+                console.log(resposta.json)
+                resposta.json().then((json) => {
+                    const comentariosUsuario = document.getElementById("comentariosUsuario")
+                    comentariosUsuario.innerHTML = json[0].qtdComentarios
+                    var contaPorcentagem = ((json[0].qtdComentarios / postagens.length) * 100).toFixed(2)
+
+                    if(contaPorcentagem == 0) {
+                        porcentagemUsuario.innerHTML = `Quanto você participa no site:<br>${contaPorcentagem}%<br>
+                        Poxa, nenhum comentário :(`
+                    } else if(contaPorcentagem <= 10){
+                        porcentagemUsuario.innerHTML = `Quanto você participa no site:<br>${contaPorcentagem}%<br>
+                        Poucos comentários ein!`
+                    } else if(contaPorcentagem <= 50) {
+                        porcentagemUsuario.innerHTML = `Quanto você participa no site:<br>${contaPorcentagem}%<br>
+                        Participa bastante!`
+                    } else if(contaPorcentagem < 100) {
+                        porcentagemUsuario.innerHTML = `Quanto você participa no site:<br>${contaPorcentagem}%<br>
+                        Muito comunicativo ein!`
+                    } else {
+                        porcentagemUsuario.innerHTML = `Quanto você participa no site:<br>${contaPorcentagem}%<br>
+                        DONO(A) DO SITE!`
+                    }
+                });
+            }
+        });
+    }
     function deletar_post(idPost) {
         fetch(`/usuarios/delete/${idPost}`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }).then( 
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(
             posts()
         )
     }

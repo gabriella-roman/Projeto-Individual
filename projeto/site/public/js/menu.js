@@ -19,8 +19,6 @@ function abrirMenu() {
     console.log(usuarioVar);
 
     fetch(`/usuarios/qtdPostagens/${usuarioVar}`).then(function (resposta) {
-
-
       if (resposta.ok) {
         console.log(resposta.json)
         resposta.json().then((json) => {
@@ -29,8 +27,6 @@ function abrirMenu() {
         });
       }
     });
-
-    
   }
 
   function sair(){

@@ -39,9 +39,6 @@
             <div class="baixo">JÁ TEM CONTA? FAÇA O <span onclick="irpaglogin()" id="palavraLogin">LOGIN</span> !</div>
         </div>
     </div>
-    <div id="div_erros_login"></div>
-    <div id="cardErro"></div>
-    <span id="mensagem_erro"></span>
 </body>
 
 </html>
@@ -57,18 +54,14 @@
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-             
-            
-            return false;
+            alert("Preencha todos os campos!");            
+        } else if(senhaVar.indexOf("@") == -1 && senhaVar.indexOf("!") == -1 && senhaVar.indexOf("#") == -1 && senhaVar.length < 6 ) {
+            alert("Senha inválida, tente uma senha com caracter especial e maior que 6 caracteres!")           
+        } else if(emailVar.indexOf("@") == -1 && emailVar.indexOf(".com") == -1) {
+            alert("Email inválido!")
         }
         else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+            fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -86,7 +79,7 @@
 
             if (resposta.ok) {
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
 
                 setTimeout(() => {
                     window.location = "login.html";
@@ -103,11 +96,12 @@
         });
 
         return false;
+        }
+
+        // Enviando o valor da nova input
+        
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
 
     function irpaglogin(){
         window.location.href = "login.html";

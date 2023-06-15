@@ -1,5 +1,5 @@
-create database subnautica;
-use subnautica;
+CREATE DATABASE subnautica;
+USE subnautica;
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(45)  NOT NULL,
@@ -25,12 +25,13 @@ CREATE TABLE comentarios (
 	constraint fkUsuarioPostagem FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
 
-select * from usuario;
-SELECT * FROM pontuacao WHERE fkUsuario = 2;
-select * from pontuacao;
-select fkUsuario from pontuacao where fkUsuario = 1;
-select count(pontuacao1), count(pontuacao2), count(pontuacao3), count(pontuacao4), count(pontuacao5) from pontuacao;
 
+-- SELECTS
+SELECT * FROM usuario;
+SELECT * FROM pontuacao;
+SELECT * FROM comentarios;
+SELECT fkUsuario FROM pontuacao WHERE fkUsuario = 1;
+SELECT count(pontuacao1), count(pontuacao2), count(pontuacao3), count(pontuacao4), count(pontuacao5) FROM pontuacao;
 SELECT 
     nome, comentario, fkUsuario as idUsuario
 FROM
@@ -39,26 +40,9 @@ FROM
     usuario ON comentarios.fkUsuario = usuario.id
     order by idPostagem desc;
 
-
-
--- junte/selecione os selects(select) ----> (1,2,3 4,5);
-select
-(select count(pontuacao1) from pontuacao where pontuacao1 = 1) as Pergunta1,
-(select count(pontuacao2) from pontuacao where pontuacao2 = 1) as Pergunta2,
-(select count(pontuacao3) from pontuacao where pontuacao3 = 1) as Pergunta3,
-(select count(pontuacao4) from pontuacao where pontuacao4 = 1) as Pergunta4,
-(select count(pontuacao5) from pontuacao where pontuacao5 = 1) as Pergunta5;
-
-SELECT * from comentarios;
-
-
-select * from usuario;
-
-delete from comentarios where idPostagem = 3;
-
-insert into comentarios values 
-(null, 'aaa', 2),
-(null, 'aaa', 2),
-(null, 'aaa', 2),
-(null, 'aaa', 2),
-(null, 'aaa', 2);
+SELECT
+(SELECT count(pontuacao1) FROM pontuacao WHERE pontuacao1 = 1) AS Pergunta1,
+(SELECT count(pontuacao2) FROM pontuacao WHERE pontuacao2 = 1) AS Pergunta2,
+(SELECT count(pontuacao3) FROM pontuacao WHERE pontuacao3 = 1) AS Pergunta3,
+(SELECT count(pontuacao4) FROM pontuacao WHERE pontuacao4 = 1) AS Pergunta4,
+(SELECT count(pontuacao5) FROM pontuacao WHERE pontuacao5 = 1) AS Pergunta5;
